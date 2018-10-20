@@ -14,6 +14,8 @@
 		2D38E585217B3F9E00516C65 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D38E583217B3F9E00516C65 /* LaunchScreen.storyboard */; };
 		2D38E590217B3F9E00516C65 /* RandomTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D38E58F217B3F9E00516C65 /* RandomTests.swift */; };
 		2D38E59B217B3F9E00516C65 /* RandomUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D38E59A217B3F9E00516C65 /* RandomUITests.swift */; };
+		2D38E5BB217B451E00516C65 /* HTTPClientContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D38E5BA217B451E00516C65 /* HTTPClientContract.swift */; };
+		2D38E5BD217B452200516C65 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D38E5BC217B452200516C65 /* HTTPClient.swift */; };
 		9B0E2291F85E3AF184D294B6 /* Pods_Random.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B6E1BB19BD39E6126F9C038 /* Pods_Random.framework */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +52,8 @@
 		2D38E596217B3F9E00516C65 /* RandomUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RandomUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D38E59A217B3F9E00516C65 /* RandomUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomUITests.swift; sourceTree = "<group>"; };
 		2D38E59C217B3F9E00516C65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2D38E5BA217B451E00516C65 /* HTTPClientContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClientContract.swift; sourceTree = "<group>"; };
+		2D38E5BC217B452200516C65 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		51ED68883FF18F7168318468 /* Pods-Random.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Random.release.xcconfig"; path = "Pods/Target Support Files/Pods-Random/Pods-Random.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -258,6 +262,8 @@
 		2D38E5B8217B435800516C65 /* HTTPClient */ = {
 			isa = PBXGroup;
 			children = (
+				2D38E5BA217B451E00516C65 /* HTTPClientContract.swift */,
+				2D38E5BC217B452200516C65 /* HTTPClient.swift */,
 			);
 			path = HTTPClient;
 			sourceTree = "<group>";
@@ -462,6 +468,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D38E57D217B3F9C00516C65 /* ViewController.swift in Sources */,
+				2D38E5BB217B451E00516C65 /* HTTPClientContract.swift in Sources */,
+				2D38E5BD217B452200516C65 /* HTTPClient.swift in Sources */,
 				2D38E57B217B3F9C00516C65 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
