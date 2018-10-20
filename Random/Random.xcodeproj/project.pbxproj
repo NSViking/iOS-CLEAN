@@ -97,6 +97,9 @@
 		2D38E579217B3F9C00516C65 /* Random */ = {
 			isa = PBXGroup;
 			children = (
+				2D38E5AA217B429600516C65 /* Clients */,
+				2D38E5A9217B428D00516C65 /* Repositories */,
+				2D38E5A8217B427F00516C65 /* Modules */,
 				2D38E57A217B3F9C00516C65 /* AppDelegate.swift */,
 				2D38E57C217B3F9C00516C65 /* ViewController.swift */,
 				2D38E57E217B3F9C00516C65 /* Main.storyboard */,
@@ -110,6 +113,8 @@
 		2D38E58E217B3F9E00516C65 /* RandomTests */ = {
 			isa = PBXGroup;
 			children = (
+				2D38E5B4217B432A00516C65 /* Mock */,
+				2D38E5B3217B431C00516C65 /* UnitTests */,
 				2D38E58F217B3F9E00516C65 /* RandomTests.swift */,
 				2D38E591217B3F9E00516C65 /* Info.plist */,
 			);
@@ -123,6 +128,129 @@
 				2D38E59C217B3F9E00516C65 /* Info.plist */,
 			);
 			path = RandomUITests;
+			sourceTree = "<group>";
+		};
+		2D38E5A8217B427F00516C65 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				2D38E5AC217B42BF00516C65 /* Detail */,
+				2D38E5AB217B42BA00516C65 /* Home */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		2D38E5A9217B428D00516C65 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				2D38E5B7217B434E00516C65 /* UsersRepository */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		2D38E5AA217B429600516C65 /* Clients */ = {
+			isa = PBXGroup;
+			children = (
+				2D38E5B9217B436900516C65 /* DBClient */,
+				2D38E5B8217B435800516C65 /* HTTPClient */,
+			);
+			path = Clients;
+			sourceTree = "<group>";
+		};
+		2D38E5AB217B42BA00516C65 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				2D38E5AF217B430100516C65 /* Interactor */,
+				2D38E5AE217B42F600516C65 /* Presenter */,
+				2D38E5AD217B42F100516C65 /* View */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		2D38E5AC217B42BF00516C65 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				2D38E5B2217B431000516C65 /* Interactor */,
+				2D38E5B1217B430C00516C65 /* Presenter */,
+				2D38E5B0217B430800516C65 /* View */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		2D38E5AD217B42F100516C65 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2D38E5AE217B42F600516C65 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		2D38E5AF217B430100516C65 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		2D38E5B0217B430800516C65 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2D38E5B1217B430C00516C65 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		2D38E5B2217B431000516C65 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		2D38E5B3217B431C00516C65 /* UnitTests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UnitTests;
+			sourceTree = "<group>";
+		};
+		2D38E5B4217B432A00516C65 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		2D38E5B7217B434E00516C65 /* UsersRepository */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UsersRepository;
+			sourceTree = "<group>";
+		};
+		2D38E5B8217B435800516C65 /* HTTPClient */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = HTTPClient;
+			sourceTree = "<group>";
+		};
+		2D38E5B9217B436900516C65 /* DBClient */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DBClient;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
