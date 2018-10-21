@@ -12,7 +12,7 @@ import RxSwift
 
 class HTTPClient: HTTPClientContract {
     
-    func getUsers(url: String) -> Single<Response> {
+    func getUsers(url: String) -> Single<[UserData]> {
 		
 		let provider = APIModule.getProvider(baseurl: "")
 		
@@ -20,14 +20,9 @@ class HTTPClient: HTTPClientContract {
 			.rx
 			.request(.get(results: 4))
 			.filterSuccessfulStatusCodes()
-			.map { moyaResponse -> Response in
-				if (moyaResponse.statusCode == 204) {
-					// No content
-					throw HTTPClientError.noContentError
-				}
-				else {
-					return moyaResponse
-				}
+			.map(UserData.self)
+			.map { moyaResponse -> [UserData] in
+				return [moyaResponse]
 			}
 	}
 }

@@ -8,10 +8,9 @@
 
 import Foundation
 import RxSwift
-import Moya
 
 protocol HTTPClientContract {
-    func getUsers(url: String) -> Single<Response>
+    func getUsers(url: String) -> Single<[UserData]>
 }
 
 enum HTTPClientError: Swift.Error, CustomStringConvertible {
