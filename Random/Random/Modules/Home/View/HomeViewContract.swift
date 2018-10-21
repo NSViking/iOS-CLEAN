@@ -9,5 +9,6 @@
 import Foundation
 
 protocol HomeViewContract {
-    
+    func reloadData()
+    func showError()
 }

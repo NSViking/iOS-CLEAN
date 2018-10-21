@@ -9,5 +9,8 @@
 import Foundation
 
 protocol HomePresenterContract {
+    func setupData()
+    func getMoreData()
     
+    func getDataSource() -> [User]
 }

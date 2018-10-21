@@ -13,3 +13,8 @@ protocol HomeInteractorContract {
 	func getUsers() -> Single<[User]>
     func getMoreUsers() -> Single<[User]>
 }
+
+enum HomeInteractorError: Swift.Error, CustomStringConvertible {
+    var description: String { return "HomeInteractorError error" }
+    case generic
+}
