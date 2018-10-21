@@ -14,64 +14,89 @@ extension HomeCollectionViewCell {
         setupSubViews()
         setupAutoLayout()
         setupViewProperties()
+        setupContainerViewProperties()
         setupUserImageViewProperties()
         setupUserNameLabelProperties()
         setupEmailLabelProperties()
-        setupPhoneLabelProperties()
+        setupPhoneButtonProperties()
     }
     
     func setupSubViews() {
+        self.contentView.addSubview(containerView)
         self.contentView.addSubview(userImageView)
         self.contentView.addSubview(nameLabel)
         self.contentView.addSubview(emailLabel)
-        self.contentView.addSubview(phoneLabel)
+        self.contentView.addSubview(phoneButton)
     }
-    
-    private func setupAutoLayout() {
+}
+
+private extension HomeCollectionViewCell {
+    func setupAutoLayout() {
+        containerView.snp.makeConstraints { maker in
+            maker.edges.equalToSuperview()
+        }
+        
         userImageView.snp.makeConstraints { maker in
-            
+            maker.top.equalToSuperview().offset(15)
+            maker.centerX.equalToSuperview()
+            maker.width.equalTo(120)
+            maker.height.equalTo(120)
         }
         
         nameLabel.snp.makeConstraints { maker in
-            
+            maker.left.equalToSuperview().offset(15)
+            maker.right.equalToSuperview().offset(-15)
+            maker.top.equalTo(userImageView.snp.bottom).offset(8)
         }
         
         emailLabel.snp.makeConstraints { maker in
-        
+            maker.left.equalToSuperview().offset(15)
+            maker.right.equalToSuperview().offset(-15)
+            maker.top.equalTo(nameLabel.snp.bottom).offset(8)
         }
         
-        phoneLabel.snp.makeConstraints { maker in
-            
+        phoneButton.snp.makeConstraints { maker in
+            maker.left.equalToSuperview().offset(35)
+            maker.right.equalToSuperview().offset(-35)
+            maker.height.equalTo(45)
+            maker.top.equalTo(emailLabel.snp.bottom).offset(15)
         }
     }
     
-    private func setupViewProperties() {
-        backgroundColor = UIColor.lightGray
+    func setupViewProperties() {
+        backgroundColor = UIColor.clear
     }
     
-    private func setupUserImageViewProperties() {
-        userImageView.contentMode = .scaleAspectFill
-        userImageView.backgroundColor = UIColor.lightGray
-        userImageView.layer.borderColor = UIColor.gray.cgColor
-        userImageView.layer.cornerRadius = userImageView.bounds.size.width/2
-        userImageView.layer.masksToBounds = true
+    func setupContainerViewProperties() {
+        self.containerView.layer.cornerRadius = 15
+        self.containerView.clipsToBounds = true
+        self.containerView.backgroundColor = UIColor.lightGray()
     }
     
-    private func setupUserNameLabelProperties() {
+    func setupUserImageViewProperties() {
+        userImageView.contentMode = .scaleAspectFit
+        userImageView.backgroundColor = UIColor.midnightBlue()
+        userImageView.layer.borderColor = UIColor.banana().cgColor
+        userImageView.layer.borderWidth = 2
+        userImageView.layer.cornerRadius = 60
+        userImageView.clipsToBounds = true
+    }
+    
+    func setupUserNameLabelProperties() {
         nameLabel.numberOfLines = 2
-        nameLabel.font = UIFont.systemFont(ofSize: 18)
+        nameLabel.font = UIFont.boldSystemFont(ofSize: 18)
         nameLabel.textColor = UIColor.black
+        nameLabel.textAlignment = .center
     }
     
-    private func setupEmailLabelProperties() {
-        nameLabel.numberOfLines = 2
-        nameLabel.font = UIFont.systemFont(ofSize: 18)
-        nameLabel.textColor = UIColor.black
+    func setupEmailLabelProperties() {
+        emailLabel.numberOfLines = 2
+        emailLabel.font = UIFont.italicSystemFont(ofSize: 18)
+        emailLabel.textColor = UIColor.black
+        emailLabel.textAlignment = .center
     }
     
-    private func setupPhoneLabelProperties() {
-        nameLabel.numberOfLines = 2
-        nameLabel.font = UIFont.systemFont(ofSize: 18)
-        nameLabel.textColor = UIColor.black
+    func setupPhoneButtonProperties() {
+        phoneButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
     }
 }

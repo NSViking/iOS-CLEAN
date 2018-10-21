@@ -33,9 +33,13 @@ extension HomeViewController {
     }
     
     private func setupCollectionViewProperties() {
-        collectionView.contentInset = UIEdgeInsets(top: 0, left: 25 * 0.5, bottom: 0, right: 25 * 0.5)
+        collectionView.contentInset = UIEdgeInsets(top: 25, left: 25 * 0.5, bottom: 0, right: 25 * 0.5)
         collectionView.backgroundColor = UIColor.white
         collectionView.register(HomeCollectionViewCell.self, forCellWithReuseIdentifier: HomeCollectionViewCell.identifier())
+        DispatchQueue.main.async {
+            self.collectionView.dataSource = self
+            self.collectionView.delegate = self
+        }
     }
     
     private func setupFlowLayoutProperties() {

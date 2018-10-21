@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/victorvicente/Huargo/Trabajo/NSViking/iOS-CLEAN/Random/Random/Devices.swift">
+   </FileRef>
+   <FileRef
       location = "group:Random.xcodeproj">
    </FileRef>
    <FileRef

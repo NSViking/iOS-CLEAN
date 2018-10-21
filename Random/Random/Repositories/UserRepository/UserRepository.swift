@@ -26,6 +26,8 @@ extension UserRepository: UserRepositoryContract {
 				return userDataArray.map { userData -> User in
 					return UserMapper.mapUserDataToUser(userData: userData)
 				}
-		}
+            }.catchError { error -> Single<[User]> in
+                return Single.error(UserRepositoryError.generic)
+            }
 	}
 }

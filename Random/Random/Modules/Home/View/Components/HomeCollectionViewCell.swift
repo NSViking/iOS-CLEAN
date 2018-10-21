@@ -11,10 +11,11 @@ import AlamofireImage
 
 class HomeCollectionViewCell: UICollectionViewCell {
     
+    var containerView = UIView()
     var userImageView = UIImageView()
     var nameLabel = UILabel()
     var emailLabel = UILabel()
-    var phoneLabel = UILabel()
+    var phoneButton = RoundedButton()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -34,7 +35,7 @@ class HomeCollectionViewCell: UICollectionViewCell {
     func configure(userName: String, phone: String, email: String, picture: String) {
         
         nameLabel.text = userName
-        phoneLabel.text = phone
+        phoneButton.setTitle(phone, for: .normal)
         emailLabel.text = email
         
         if let url = URL(string: picture) {

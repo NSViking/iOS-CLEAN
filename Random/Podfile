@@ -9,6 +9,7 @@ target 'Random' do
 	pod 'Moya/RxSwift'
 	pod 'RxSwift'
 	pod 'RxCocoa'
+    pod 'Device'
 end
 
 target 'RandomTests' do

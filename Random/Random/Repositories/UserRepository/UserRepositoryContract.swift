@@ -13,3 +13,7 @@ protocol UserRepositoryContract {
 	func getUsers(pagination: Pagination) -> Single<[User]>
 }
 
+enum UserRepositoryError: Swift.Error, CustomStringConvertible {
+    var description: String { return "UserRepositoryError error" }
+    case generic
+}
