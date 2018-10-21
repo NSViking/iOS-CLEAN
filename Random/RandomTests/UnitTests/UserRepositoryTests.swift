@@ -35,7 +35,7 @@ class UserRepositoryTests: XCTestCase {
 			.single()
 			
 			XCTAssert(results.count == pagination.getObjectsPerPage())
-		} catch  {
+		} catch {
 			XCTFail()
 		}
 
