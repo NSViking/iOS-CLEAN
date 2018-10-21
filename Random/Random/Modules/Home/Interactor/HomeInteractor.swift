@@ -22,10 +22,16 @@ class HomeInteractor {
 extension HomeInteractor: HomeInteractorContract {
     func getUsers() -> Single<[User]> {
         return self.repo.getUsers(pagination: self.pagination)
+            .catchError { error -> Single<[User]> in
+            return Single.error(HomeInteractorError.generic)
+        }
     }
     
     func getMoreUsers() -> Single<[User]> {
         self.pagination.next()
         return self.repo.getUsers(pagination: self.pagination)
+            .catchError { error -> Single<[User]> in
+                return Single.error(HomeInteractorError.generic)
+        }
     }
 }

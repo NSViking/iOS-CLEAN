@@ -10,8 +10,8 @@ import Foundation
 
 class NameData: Codable {
 	var title: String
-	var firstName: String
-	var lastName: String
+	var first: String
+	var last: String
 
 	class func decode(data: Data) -> NameData {
 		let decoder = JSONDecoder()

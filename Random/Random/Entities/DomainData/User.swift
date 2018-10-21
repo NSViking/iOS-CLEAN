@@ -12,6 +12,7 @@ class User {
 	var name: String = ""
 	var lastname: String = ""
 	var picture: String = ""
+    var email: String = ""
 	var phone: String = ""
 	var gender: String = ""
 	var registeredDate: String = ""

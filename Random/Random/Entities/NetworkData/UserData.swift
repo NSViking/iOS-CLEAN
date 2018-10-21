@@ -10,11 +10,12 @@ import Foundation
 
 class UserData: Codable {
 	var name: NameData?
+    var email: String = ""
 	var phone: String = ""
 	var gender: String = ""
-	var picture: PictureData?
-	var registered: RegisteredData?
-	var location: LocationData?
+    var picture: PictureData?
+    var registered: RegisteredData?
+    var location: LocationData?
 	
 	class func decode(data: Data) -> UserData {
 		let decoder = JSONDecoder()

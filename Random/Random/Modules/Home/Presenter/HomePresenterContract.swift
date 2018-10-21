@@ -12,5 +12,7 @@ protocol HomePresenterContract {
     func setupData()
     func getMoreData()
     
-    func getDataSource() -> [User]
+    func getDataSource() -> [UserViewModel]
+    func getDataSourceCount() -> Int
+    func getDataAt(index: Int) -> UserViewModel
 }

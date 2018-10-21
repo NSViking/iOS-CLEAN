@@ -20,7 +20,7 @@ extension APIModule {
         
         let apiProvider = MoyaProvider<APIModule>(endpointClosure: {(target: APIModule) -> Moya.Endpoint in
             
-            let base = URL(string: "http://api.randomuser.me")
+            let base = URL(string: baseurl)
             
             let url = base?.appendingPathComponent(target.path).absoluteString
 			let endpoint: Moya.Endpoint = Endpoint(url: url!, sampleResponseClosure: { .networkResponse(200, target.sampleData) }, method: target.method, task: target.task, httpHeaderFields: target.headers)
