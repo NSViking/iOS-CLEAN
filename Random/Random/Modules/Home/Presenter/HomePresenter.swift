@@ -10,9 +10,11 @@ import Foundation
 
 class HomePresenter {
     var interactor: HomeInteractorContract
+    var view: HomeViewContract
     
-    init(interactor: HomeInteractorContract) {
+    init(interactor: HomeInteractorContract, view: HomeViewContract) {
         self.interactor = interactor
+        self.view = view
     }
 }
 
