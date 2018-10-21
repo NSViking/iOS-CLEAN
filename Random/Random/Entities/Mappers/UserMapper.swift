@@ -34,4 +34,16 @@ class UserMapper {
         
         return userViewModel
     }
+    
+    class func mapUserToUserDetailViewModel(user: User) -> UserDetailViewModel {
+        let userViewModel = UserDetailViewModel()
+        userViewModel.username = user.name.capitalized + " " + user.lastname.capitalized
+        userViewModel.email = user.email
+        userViewModel.phone = user.phone
+        userViewModel.picture = user.picture
+        userViewModel.location = user.street.capitalized + " ," + user.city.capitalized + " ," + user.state.capitalized
+        userViewModel.registeredDate = user.registeredDate
+        
+        return userViewModel
+    }
 }
