@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		2D29CBF0217D0B5E00C046B9 /* UserRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D29CBEF217D0B5E00C046B9 /* UserRepositoryMock.swift */; };
+		2D29CBF8217D134000C046B9 /* HomePresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D29CBF7217D134000C046B9 /* HomePresenterTests.swift */; };
+		2D29CC00217D142600C046B9 /* HomeViewContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D29CBFF217D142600C046B9 /* HomeViewContract.swift */; };
+		2D29CC04217D142F00C046B9 /* HomePresenterContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D29CC02217D142F00C046B9 /* HomePresenterContract.swift */; };
+		2D29CC05217D142F00C046B9 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D29CC03217D142F00C046B9 /* HomePresenter.swift */; };
+		2D29CC07217D15E400C046B9 /* HomeViewMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D29CC06217D15E400C046B9 /* HomeViewMock.swift */; };
+		2D29CC09217D15ED00C046B9 /* HomeInteractorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D29CC08217D15ED00C046B9 /* HomeInteractorMock.swift */; };
 		2D38E57B217B3F9C00516C65 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D38E57A217B3F9C00516C65 /* AppDelegate.swift */; };
 		2D38E57D217B3F9C00516C65 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D38E57C217B3F9C00516C65 /* ViewController.swift */; };
 		2D38E580217B3F9C00516C65 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D38E57E217B3F9C00516C65 /* Main.storyboard */; };
@@ -60,6 +66,12 @@
 		2B6E1BB19BD39E6126F9C038 /* Pods_Random.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Random.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C15E845A2E1074CF134DE4F /* Pods_RandomTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RandomTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D29CBEF217D0B5E00C046B9 /* UserRepositoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepositoryMock.swift; sourceTree = "<group>"; };
+		2D29CBF7217D134000C046B9 /* HomePresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenterTests.swift; sourceTree = "<group>"; };
+		2D29CBFF217D142600C046B9 /* HomeViewContract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewContract.swift; sourceTree = "<group>"; };
+		2D29CC02217D142F00C046B9 /* HomePresenterContract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePresenterContract.swift; sourceTree = "<group>"; };
+		2D29CC03217D142F00C046B9 /* HomePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		2D29CC06217D15E400C046B9 /* HomeViewMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewMock.swift; sourceTree = "<group>"; };
+		2D29CC08217D15ED00C046B9 /* HomeInteractorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractorMock.swift; sourceTree = "<group>"; };
 		2D38E577217B3F9C00516C65 /* Random.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Random.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D38E57A217B3F9C00516C65 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2D38E57C217B3F9C00516C65 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -133,6 +145,23 @@
 				57614BC2836313B8B16D0917 /* Pods-RandomTests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		2D29CBFE217D142600C046B9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2D29CBFF217D142600C046B9 /* HomeViewContract.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2D29CC01217D142F00C046B9 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				2D29CC02217D142F00C046B9 /* HomePresenterContract.swift */,
+				2D29CC03217D142F00C046B9 /* HomePresenter.swift */,
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 		2D38E56E217B3F9C00516C65 = {
@@ -275,6 +304,7 @@
 				5C8BDF2D217C90660013BBB7 /* APIModuleTest.swift */,
 				5C8BDF49217CAC870013BBB7 /* UserRepositoryTests.swift */,
 				5C8BDF58217CB9E20013BBB7 /* HomeInteractorTests.swift */,
+				2D29CBF7217D134000C046B9 /* HomePresenterTests.swift */,
 			);
 			path = UnitTests;
 			sourceTree = "<group>";
@@ -284,6 +314,8 @@
 			children = (
 				5C8BDF4C217CAD4E0013BBB7 /* HTTPClientMock.swift */,
 				2D29CBEF217D0B5E00C046B9 /* UserRepositoryMock.swift */,
+				2D29CC08217D15ED00C046B9 /* HomeInteractorMock.swift */,
+				2D29CC06217D15E400C046B9 /* HomeViewMock.swift */,
 			);
 			path = Mock;
 			sourceTree = "<group>";
@@ -307,6 +339,8 @@
 		5C8BDF52217CB79F0013BBB7 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				2D29CBFE217D142600C046B9 /* View */,
+				2D29CC01217D142F00C046B9 /* Presenter */,
 				5C8BDF53217CB7AA0013BBB7 /* Interactor */,
 			);
 			path = Home;
@@ -315,8 +349,8 @@
 		5C8BDF53217CB7AA0013BBB7 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
-				5C8BDF54217CB7B60013BBB7 /* HomeInteractorContract.swift */,
 				5C8BDF56217CB7D40013BBB7 /* HomeInteractor.swift */,
+				5C8BDF54217CB7B60013BBB7 /* HomeInteractorContract.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -574,10 +608,13 @@
 				2D38E5BF217B479700516C65 /* APIModule.swift in Sources */,
 				2D38E57D217B3F9C00516C65 /* ViewController.swift in Sources */,
 				2D38E5BB217B451E00516C65 /* HTTPClientContract.swift in Sources */,
+				2D29CC05217D142F00C046B9 /* HomePresenter.swift in Sources */,
 				5C8BDF45217CAAD10013BBB7 /* RegisteredData.swift in Sources */,
 				5C8BDF47217CAB630013BBB7 /* LocationData.swift in Sources */,
 				5C8BDF36217CA0BE0013BBB7 /* UserRepository.swift in Sources */,
 				5C8BDF50217CB6380013BBB7 /* UserMapper.swift in Sources */,
+				2D29CC00217D142600C046B9 /* HomeViewContract.swift in Sources */,
+				2D29CC04217D142F00C046B9 /* HomePresenterContract.swift in Sources */,
 				5C8BDF3D217CA3540013BBB7 /* NameData.swift in Sources */,
 				2D38E5BD217B452200516C65 /* HTTPClient.swift in Sources */,
 				5C8BDF55217CB7B60013BBB7 /* HomeInteractorContract.swift in Sources */,
@@ -598,8 +635,11 @@
 				5C8BDF4D217CAD4E0013BBB7 /* HTTPClientMock.swift in Sources */,
 				5C8BDF59217CB9E20013BBB7 /* HomeInteractorTests.swift in Sources */,
 				5C8BDF2E217C90660013BBB7 /* APIModuleTest.swift in Sources */,
+				2D29CC07217D15E400C046B9 /* HomeViewMock.swift in Sources */,
+				2D29CBF8217D134000C046B9 /* HomePresenterTests.swift in Sources */,
 				5C8BDF4A217CAC870013BBB7 /* UserRepositoryTests.swift in Sources */,
 				2D29CBF0217D0B5E00C046B9 /* UserRepositoryMock.swift in Sources */,
+				2D29CC09217D15ED00C046B9 /* HomeInteractorMock.swift in Sources */,
 				2D38E590217B3F9E00516C65 /* RandomTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
