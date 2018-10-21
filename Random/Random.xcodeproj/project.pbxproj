@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2D29CBF0217D0B5E00C046B9 /* UserRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D29CBEF217D0B5E00C046B9 /* UserRepositoryMock.swift */; };
+		2D29CBF3217D129600C046B9 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D29CBF2217D129600C046B9 /* HomePresenter.swift */; };
+		2D29CBF5217D129D00C046B9 /* HomePresenterContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D29CBF4217D129D00C046B9 /* HomePresenterContract.swift */; };
 		2D38E57B217B3F9C00516C65 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D38E57A217B3F9C00516C65 /* AppDelegate.swift */; };
 		2D38E57D217B3F9C00516C65 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D38E57C217B3F9C00516C65 /* ViewController.swift */; };
 		2D38E580217B3F9C00516C65 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D38E57E217B3F9C00516C65 /* Main.storyboard */; };
@@ -60,6 +62,8 @@
 		2B6E1BB19BD39E6126F9C038 /* Pods_Random.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Random.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C15E845A2E1074CF134DE4F /* Pods_RandomTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RandomTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D29CBEF217D0B5E00C046B9 /* UserRepositoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepositoryMock.swift; sourceTree = "<group>"; };
+		2D29CBF2217D129600C046B9 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		2D29CBF4217D129D00C046B9 /* HomePresenterContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenterContract.swift; sourceTree = "<group>"; };
 		2D38E577217B3F9C00516C65 /* Random.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Random.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D38E57A217B3F9C00516C65 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2D38E57C217B3F9C00516C65 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -133,6 +137,16 @@
 				57614BC2836313B8B16D0917 /* Pods-RandomTests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		2D29CBF1217D128200C046B9 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				2D29CBF2217D129600C046B9 /* HomePresenter.swift */,
+				2D29CBF4217D129D00C046B9 /* HomePresenterContract.swift */,
+			);
+			name = Presenter;
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 		2D38E56E217B3F9C00516C65 = {
@@ -307,6 +321,7 @@
 		5C8BDF52217CB79F0013BBB7 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				2D29CBF1217D128200C046B9 /* Presenter */,
 				5C8BDF53217CB7AA0013BBB7 /* Interactor */,
 			);
 			path = Home;
@@ -579,6 +594,7 @@
 				5C8BDF36217CA0BE0013BBB7 /* UserRepository.swift in Sources */,
 				5C8BDF50217CB6380013BBB7 /* UserMapper.swift in Sources */,
 				5C8BDF3D217CA3540013BBB7 /* NameData.swift in Sources */,
+				2D29CBF5217D129D00C046B9 /* HomePresenterContract.swift in Sources */,
 				2D38E5BD217B452200516C65 /* HTTPClient.swift in Sources */,
 				5C8BDF55217CB7B60013BBB7 /* HomeInteractorContract.swift in Sources */,
 				5C8BDF3B217CA1A70013BBB7 /* UserData.swift in Sources */,
@@ -586,6 +602,7 @@
 				5C8BDF41217CA9F00013BBB7 /* User.swift in Sources */,
 				5C8BDF34217CA0B60013BBB7 /* UserRepositoryContract.swift in Sources */,
 				2D38E57B217B3F9C00516C65 /* AppDelegate.swift in Sources */,
+				2D29CBF3217D129600C046B9 /* HomePresenter.swift in Sources */,
 				5C8BDF3F217CA3710013BBB7 /* PictureData.swift in Sources */,
 				5C8BDF57217CB7D40013BBB7 /* HomeInteractor.swift in Sources */,
 			);
