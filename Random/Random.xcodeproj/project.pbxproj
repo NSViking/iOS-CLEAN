@@ -17,6 +17,7 @@
 		2D38E5BB217B451E00516C65 /* HTTPClientContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D38E5BA217B451E00516C65 /* HTTPClientContract.swift */; };
 		2D38E5BD217B452200516C65 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D38E5BC217B452200516C65 /* HTTPClient.swift */; };
 		2D38E5BF217B479700516C65 /* APIModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D38E5BE217B479700516C65 /* APIModule.swift */; };
+		5C8BDF2E217C90660013BBB7 /* APIModuleTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8BDF2D217C90660013BBB7 /* APIModuleTest.swift */; };
 		9B0E2291F85E3AF184D294B6 /* Pods_Random.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B6E1BB19BD39E6126F9C038 /* Pods_Random.framework */; };
 		AE52355DD9A252470BC91846 /* Pods_RandomTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C15E845A2E1074CF134DE4F /* Pods_RandomTests.framework */; };
 /* End PBXBuildFile section */
@@ -60,6 +61,7 @@
 		2D38E5BE217B479700516C65 /* APIModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIModule.swift; sourceTree = "<group>"; };
 		51ED68883FF18F7168318468 /* Pods-Random.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Random.release.xcconfig"; path = "Pods/Target Support Files/Pods-Random/Pods-Random.release.xcconfig"; sourceTree = "<group>"; };
 		57614BC2836313B8B16D0917 /* Pods-RandomTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RandomTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RandomTests/Pods-RandomTests.release.xcconfig"; sourceTree = "<group>"; };
+		5C8BDF2D217C90660013BBB7 /* APIModuleTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIModuleTest.swift; sourceTree = SOURCE_ROOT; };
 		A5439FEEFF2A98589881037E /* Pods-RandomTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RandomTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RandomTests/Pods-RandomTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -250,6 +252,7 @@
 		2D38E5B3217B431C00516C65 /* UnitTests */ = {
 			isa = PBXGroup;
 			children = (
+				5C8BDF2D217C90660013BBB7 /* APIModuleTest.swift */,
 			);
 			path = UnitTests;
 			sourceTree = "<group>";
@@ -456,6 +459,9 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-RandomTests/Pods-RandomTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/RxBlocking/RxBlocking.framework",
 				"${BUILT_PRODUCTS_DIR}/RxTest/RxTest.framework",
@@ -464,6 +470,9 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxBlocking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxTest.framework",
@@ -548,6 +557,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C8BDF2E217C90660013BBB7 /* APIModuleTest.swift in Sources */,
 				2D38E590217B3F9E00516C65 /* RandomTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -759,6 +769,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3R7X3B75XU;
+				ENABLE_ON_DEMAND_RESOURCES = YES;
 				INFOPLIST_FILE = RandomTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -781,6 +792,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3R7X3B75XU;
+				ENABLE_ON_DEMAND_RESOURCES = YES;
 				INFOPLIST_FILE = RandomTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

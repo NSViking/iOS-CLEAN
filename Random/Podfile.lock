@@ -2,6 +2,8 @@ PODS:
   - Alamofire (4.7.3)
   - AlamofireImage (3.4.1):
     - Alamofire (~> 4.7)
+  - Moya (11.0.2):
+    - Moya/Core (= 11.0.2)
   - Moya/Core (11.0.2):
     - Alamofire (~> 4.1)
     - Result (~> 3.0)
@@ -20,6 +22,7 @@ PODS:
 
 DEPENDENCIES:
   - AlamofireImage
+  - Moya
   - Moya/RxSwift
   - RxBlocking (~> 4.0)
   - RxCocoa
@@ -50,6 +53,6 @@ SPEC CHECKSUMS:
   RxTest: ea97a208826906f3904c0debdd09575ebcbfe216
   SnapKit: 0de968a9fec17499afa29683b05d0c775b6d1c29
 
-PODFILE CHECKSUM: ea01efe83c40561ddc11e24cce1fc97afb5ab216
+PODFILE CHECKSUM: 5d3f24308907266766e2a4fd1668119be6a0a86d
 
 COCOAPODS: 1.5.3

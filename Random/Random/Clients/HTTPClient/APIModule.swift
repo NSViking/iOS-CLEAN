@@ -8,6 +8,7 @@
 
 import Foundation
 import Moya
+import RxSwift
 
 public enum APIModule {
     case get(results: Int)
@@ -22,7 +23,7 @@ extension APIModule {
             let base = URL(string: "http://api.randomuser.me")
             
             let url = base?.appendingPathComponent(target.path).absoluteString
-            let endpoint: Moya.Endpoint = Endpoint(url: url!, sampleResponseClosure: { .networkResponse(200, target.sampleData) }, method: target.method, task: target.task, httpHeaderFields: target.headers)
+			let endpoint: Moya.Endpoint = Endpoint(url: url!, sampleResponseClosure: { .networkResponse(200, target.sampleData) }, method: target.method, task: target.task, httpHeaderFields: target.headers)
             
             return endpoint
         })
@@ -32,6 +33,7 @@ extension APIModule {
 }
 
 extension APIModule: Moya.TargetType {
+	
     public var baseURL: URL {
         return URL(string: "https://not.in.use/")!
     }
@@ -57,7 +59,7 @@ extension APIModule: Moya.TargetType {
     public var task: Task {
         switch self {
         case .get(let results):
-            return .requestParameters(parameters: ["results": results], encoding: String.Encoding.utf8 as! ParameterEncoding)
+			return .requestParameters(parameters: ["results": results], encoding: URLEncoding.queryString)
         }
     }
     

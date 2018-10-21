@@ -5,12 +5,16 @@ use_frameworks!
 target 'Random' do
     pod 'AlamofireImage'
     pod 'SnapKit', '~> 4.0.1'
-    pod 'RxSwift'
-    pod 'RxCocoa'
-    pod 'Moya/RxSwift'
+	pod 'Moya'
+	pod 'Moya/RxSwift'
+	pod 'RxSwift'
+	pod 'RxCocoa'
 end
 
 target 'RandomTests' do
+	pod 'Moya'
+	pod 'Moya/RxSwift'
+	pod 'RxSwift'
     pod 'RxBlocking', '~> 4.0'
     pod 'RxTest',     '~> 4.0'
 end

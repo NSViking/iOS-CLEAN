@@ -7,7 +7,16 @@
 //
 
 import Foundation
+import RxSwift
+import Moya
 
 protocol HTTPClientContract {
-    func get(url: String)
+    func getUsers(url: String) -> Single<Response>
+}
+
+enum HTTPClientError: Swift.Error, CustomStringConvertible {
+	var description: String { return "MomentsServiceClientError.." }
+	case noContentError
+	case noConnectionError
+	case genericError
 }
