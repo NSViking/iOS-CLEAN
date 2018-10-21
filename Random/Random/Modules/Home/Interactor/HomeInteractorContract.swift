@@ -7,7 +7,9 @@
 //
 
 import Foundation
+import RxSwift
 
 protocol HomeInteractorContract {
-	func getUsers(pagination: Pagination)
+	func getUsers() -> Single<[User]>
+    func getMoreUsers() -> Single<[User]>
 }

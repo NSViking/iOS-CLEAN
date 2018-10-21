@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D29CBF0217D0B5E00C046B9 /* UserRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D29CBEF217D0B5E00C046B9 /* UserRepositoryMock.swift */; };
 		2D38E57B217B3F9C00516C65 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D38E57A217B3F9C00516C65 /* AppDelegate.swift */; };
 		2D38E57D217B3F9C00516C65 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D38E57C217B3F9C00516C65 /* ViewController.swift */; };
 		2D38E580217B3F9C00516C65 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D38E57E217B3F9C00516C65 /* Main.storyboard */; };
@@ -58,6 +59,7 @@
 		0A8A3572414B7F5512439E38 /* Pods-Random.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Random.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Random/Pods-Random.debug.xcconfig"; sourceTree = "<group>"; };
 		2B6E1BB19BD39E6126F9C038 /* Pods_Random.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Random.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C15E845A2E1074CF134DE4F /* Pods_RandomTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RandomTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D29CBEF217D0B5E00C046B9 /* UserRepositoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepositoryMock.swift; sourceTree = "<group>"; };
 		2D38E577217B3F9C00516C65 /* Random.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Random.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D38E57A217B3F9C00516C65 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2D38E57C217B3F9C00516C65 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -281,6 +283,7 @@
 			isa = PBXGroup;
 			children = (
 				5C8BDF4C217CAD4E0013BBB7 /* HTTPClientMock.swift */,
+				2D29CBEF217D0B5E00C046B9 /* UserRepositoryMock.swift */,
 			);
 			path = Mock;
 			sourceTree = "<group>";
@@ -596,6 +599,7 @@
 				5C8BDF59217CB9E20013BBB7 /* HomeInteractorTests.swift in Sources */,
 				5C8BDF2E217C90660013BBB7 /* APIModuleTest.swift in Sources */,
 				5C8BDF4A217CAC870013BBB7 /* UserRepositoryTests.swift in Sources */,
+				2D29CBF0217D0B5E00C046B9 /* UserRepositoryMock.swift in Sources */,
 				2D38E590217B3F9E00516C65 /* RandomTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

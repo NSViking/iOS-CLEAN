@@ -11,6 +11,16 @@ import Foundation
 class Pagination {
 	private var currentPage = 0
 	private var objectsPerPage = 5
+    
+    init() {
+        self.currentPage = 0
+        self.objectsPerPage = 5
+    }
+    
+    init(page: Int, total: Int) {
+        self.currentPage = page
+        self.objectsPerPage = total
+    }
 }
 
 extension Pagination {
@@ -29,4 +39,8 @@ extension Pagination {
 	func setObjectsPerPage(total: Int) {
 		self.objectsPerPage = total;
 	}
+    
+    func next() {
+        self.currentPage += 1
+    }
 }
