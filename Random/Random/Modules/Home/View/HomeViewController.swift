@@ -14,8 +14,21 @@ class HomeViewController: UIViewController {
     lazy var flowLayout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
     lazy var collectionView: UICollectionView = UICollectionView(frame: .zero, collectionViewLayout: self.flowLayout)
     
+    var presenter: HomePresenterContract?
+    
     override func viewDidLoad() {
         self.setupUI()
         self.setupAutoLayout()
+    }
+}
+
+extension HomeViewController: HomeViewContract {
+    
+    func showError() {
+        
+    }
+    
+    func reloadData() {
+        
     }
 }

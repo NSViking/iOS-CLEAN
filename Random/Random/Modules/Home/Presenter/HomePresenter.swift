@@ -10,7 +10,7 @@ import Foundation
 
 class HomePresenter {
     var interactor: HomeInteractorContract
-    var view: HomeViewContract
+    weak var view: HomeViewContract?
     
     var dataSource: [User] = []
     
@@ -26,9 +26,9 @@ extension HomePresenter: HomePresenterContract {
         _ = self.interactor.getUsers()
             .subscribe(onSuccess: { usersDataSource in
                 self.dataSource = usersDataSource
-                self.view.reloadData()
+                self.view?.reloadData()
         }) { error in
-            self.view.showError()
+            self.view?.showError()
         }
     }
     
@@ -36,9 +36,9 @@ extension HomePresenter: HomePresenterContract {
         _ = self.interactor.getMoreUsers()
             .subscribe(onSuccess: { usersDataSource in
                 self.dataSource.append(contentsOf: usersDataSource)
-                self.view.reloadData()
+                self.view?.reloadData()
         }) { error in
-            self.view.showError()
+            self.view?.showError()
         }
     }
     

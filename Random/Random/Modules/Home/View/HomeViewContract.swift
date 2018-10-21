@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol HomeViewContract {
+@objc protocol HomeViewContract {
     func reloadData()
     func showError()
 }
