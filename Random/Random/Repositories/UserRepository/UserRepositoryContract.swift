@@ -11,6 +11,7 @@ import RxSwift
 
 protocol UserRepositoryContract {
 	func getUsers(pagination: Pagination) -> Single<[User]>
+    func getUserById(id: String) -> Single<User>
 }
 
 enum UserRepositoryError: Swift.Error, CustomStringConvertible {

@@ -5,6 +5,9 @@
 //  Created by Víctor Vicente on 21/10/2018.
 //  Copyright © 2018 AKA7. All rights reserved.
 //
+//  ******************************************
+//
+//  This test give us security if anyone change the URL wrong
 
 import Foundation
 import XCTest

@@ -32,4 +32,9 @@ extension UserRepositoryMock: UserRepositoryContract {
         let user = User()
         return callHandler.accept(Single.just([user]), ofFunction: #function, atFile: #file, inLine: #line, withArgs: nil) as! Single<[User]>
     }
+    
+    func getUserById(id: String) -> Single<User> {
+        let user = User()
+        return callHandler.accept(Single.just(user), ofFunction: #function, atFile: #file, inLine: #line, withArgs: nil) as! Single<User>
+    }
 }

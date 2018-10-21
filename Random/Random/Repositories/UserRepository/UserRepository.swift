@@ -30,4 +30,9 @@ extension UserRepository: UserRepositoryContract {
                 return Single.error(UserRepositoryError.generic)
             }
 	}
+    
+    func getUserById(id: String) -> Single<User> {
+        //TODO: Connect with persistent client
+        return Single.just(User())
+    }
 }
