@@ -12,11 +12,12 @@ target 'Random' do
 end
 
 target 'RandomTests' do
+	pod 'Mockit'
 	pod 'Moya'
 	pod 'Moya/RxSwift'
 	pod 'RxSwift'
-    pod 'RxBlocking', '~> 4.0'
-    pod 'RxTest',     '~> 4.0'
+	pod 'RxBlocking'
+	pod 'RxTest'
 end
 
 post_install do |installer|
