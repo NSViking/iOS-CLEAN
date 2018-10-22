@@ -17,12 +17,19 @@ import Mockit
 
 class HomePresenterTests: XCTestCase {
     
+    var mockRouter: HomeRouterMock!
+    var mockView: HomeViewMock!
+    var mockInteractor: HomeInteractorMock!
+    
+    override func setUp() {
+        mockRouter = HomeRouterMock(testCase: self)
+        mockView = HomeViewMock(testCase: self)
+        mockInteractor = HomeInteractorMock(testCase: self)
+    }
+    
     func testSetupData() {
         
-        let mockView = HomeViewMock(testCase: self)
-        let mockInteractor = HomeInteractorMock(testCase: self)
-        
-        let presenter = HomePresenter(interactor: mockInteractor, view: mockView)
+        let presenter = HomePresenter(interactor: mockInteractor, view: mockView, router: mockRouter)
     
         presenter.setupData()
         
@@ -32,14 +39,11 @@ class HomePresenterTests: XCTestCase {
     
     func testSetupDataWrong() {
         
-        let mockView = HomeViewMock(testCase: self)
-        let mockInteractor = HomeInteractorMock(testCase: self)
-        
         let _ = mockInteractor.when()
             .call(withReturnValue: mockInteractor.getUsers())
             .thenReturn(Single.error(HomeInteractorError.generic))
         
-        let presenter = HomePresenter(interactor: mockInteractor, view: mockView)
+        let presenter = HomePresenter(interactor: mockInteractor, view: mockView, router: mockRouter)
         
         presenter.setupData()
         
@@ -49,10 +53,7 @@ class HomePresenterTests: XCTestCase {
     
     func testGetMoreData() {
         
-        let mockView = HomeViewMock(testCase: self)
-        let mockInteractor = HomeInteractorMock(testCase: self)
-        
-        let presenter = HomePresenter(interactor: mockInteractor, view: mockView)
+        let presenter = HomePresenter(interactor: mockInteractor, view: mockView, router: mockRouter)
         
         presenter.getMoreData()
         
@@ -62,18 +63,25 @@ class HomePresenterTests: XCTestCase {
     
     func testGetMoreDataWrong() {
         
-        let mockView = HomeViewMock(testCase: self)
-        let mockInteractor = HomeInteractorMock(testCase: self)
-        
         let _ = mockInteractor.when()
             .call(withReturnValue: mockInteractor.getMoreUsers())
             .thenReturn(Single.error(HomeInteractorError.generic))
         
-        let presenter = HomePresenter(interactor: mockInteractor, view: mockView)
+        let presenter = HomePresenter(interactor: mockInteractor, view: mockView, router: mockRouter)
         
         presenter.getMoreData()
         
         let _ = mockInteractor.verify(verificationMode: Once()).getMoreUsers()
         let _ = mockView.verify(verificationMode: Once()).showError()
+    }
+    
+    func testGoToDetail() {
+        
+        let presenter = HomePresenter(interactor: mockInteractor, view: mockView, router: mockRouter)
+        presenter.dataSource = [UserViewModel()]
+        
+        presenter.goToDetail(index: 0)
+        
+        let _ = mockRouter.verify(verificationMode: Once()).goToUserDetail(userId: "")
     }
 }

@@ -17,13 +17,42 @@ import Mockit
 
 class HomeInteractorTests: XCTestCase {
 	
-	func testGetUsers() {
+	func testGetUsersLocal() {
         let mockRepo = UserRepositoryMock(testCase: self)
         let pagination = Pagination()
         
         let mockResponse: [User] = []
         let _ = mockRepo.when()
+            .call(withReturnValue: mockRepo.getUsers())
+            .thenReturn(Single.just(mockResponse))
+        
+        let interactor = HomeInteractor(repo: mockRepo, pagination: pagination)
+        
+        do {
+            let results = try interactor.getUsers()
+                .toBlocking()
+                .single()
+            XCTAssertTrue(results.count == 0)
+            XCTAssertTrue(interactor.pagination.getCurrentPage() == 0)
+        } catch {
+            XCTFail()
+        }
+        
+        let _ = mockRepo.verify(verificationMode: Once()).getUsers()
+	}
+    
+    func testGetUsersCloud() {
+        let mockRepo = UserRepositoryMock(testCase: self)
+        let pagination = Pagination()
+        mockRepo.activateHasUsers = false
+        
+        let mockResponse: [User] = []
+        let _ = mockRepo.when()
             .call(withReturnValue: mockRepo.getUsers(pagination: pagination))
+            .thenReturn(Single.just(mockResponse))
+        
+        let _ = mockRepo.when()
+            .call(withReturnValue: mockRepo.getUsers())
             .thenReturn(Single.just(mockResponse))
         
         let interactor = HomeInteractor(repo: mockRepo, pagination: pagination)
@@ -39,15 +68,22 @@ class HomeInteractorTests: XCTestCase {
         }
         
         let _ = mockRepo.verify(verificationMode: Once()).getUsers(pagination: pagination)
-	}
+        let _ = mockRepo.verify(verificationMode: Once()).saveUsers(users: [])
+        let _ = mockRepo.verify(verificationMode: Once()).getUsers()
+    }
     
     func testGetMoreUsers() {
         let mockRepo = UserRepositoryMock(testCase: self)
         let pagination = Pagination()
+        mockRepo.activateHasUsers = false
         
         let mockResponse: [User] = []
         let _ = mockRepo.when()
             .call(withReturnValue: mockRepo.getUsers(pagination: pagination))
+            .thenReturn(Single.just(mockResponse))
+        
+        let _ = mockRepo.when()
+            .call(withReturnValue: mockRepo.getUsers())
             .thenReturn(Single.just(mockResponse))
         
         let interactor = HomeInteractor(repo: mockRepo, pagination: pagination)
@@ -63,5 +99,7 @@ class HomeInteractorTests: XCTestCase {
         }
         
         let _ = mockRepo.verify(verificationMode: Once()).getUsers(pagination: pagination)
+        let _ = mockRepo.verify(verificationMode: Once()).saveUsers(users: [])
+        let _ = mockRepo.verify(verificationMode: Once()).getUsers()
     }
 }

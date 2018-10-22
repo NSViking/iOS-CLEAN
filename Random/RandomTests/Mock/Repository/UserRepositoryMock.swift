@@ -16,6 +16,7 @@ import XCTest
 
 class UserRepositoryMock: NSObject, Mock {
     let callHandler: CallHandler
+    var activateHasUsers = true
     
     init(testCase: XCTestCase) {
         callHandler = CallHandlerImpl(withTestCase: testCase)
@@ -27,6 +28,19 @@ class UserRepositoryMock: NSObject, Mock {
 }
 
 extension UserRepositoryMock: UserRepositoryContract {
+    func saveUsers(users: [User]) {
+        callHandler.accept(nil, ofFunction: #function, atFile: #file, inLine: #line, withArgs: nil)
+    }
+    
+    func getUsers() -> Single<[User]> {
+        let user = User()
+        return callHandler.accept(Single.just([user]), ofFunction: #function, atFile: #file, inLine: #line, withArgs: nil) as! Single<[User]>
+    }
+    
+    func hasUsers() -> Bool {
+        callHandler.accept(1, ofFunction: #function, atFile: #file, inLine: #line, withArgs: nil)
+        return activateHasUsers
+    }
     
     func getUsers(pagination: Pagination) -> Single<[User]> {
         let user = User()

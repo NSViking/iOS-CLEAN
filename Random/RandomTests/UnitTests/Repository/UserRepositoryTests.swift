@@ -19,6 +19,7 @@ class UserRepositoryTests: XCTestCase {
 	
 	func testGetUsers() {
 		let mockClient = HTTPClientMock(testCase: self)
+        let mockDataBaseClient = DataBaseClientMock(testCase: self)
 		let pagination = Pagination()
 		pagination.setCurrentPage(page: 0)
 		pagination.setObjectsPerPage(total: 0)
@@ -28,7 +29,8 @@ class UserRepositoryTests: XCTestCase {
 			.call(withReturnValue: mockClient.getUsers(url: ""))
 			.thenReturn(Single.just(mockResponse))
 		
-		let repo = UserRepository(httpClient: mockClient)
+        let repo = UserRepository(httpClient: mockClient,
+                                  dataBaseClient: mockDataBaseClient)
 		do {
 		let results = try repo.getUsers(pagination: pagination)
 			.toBlocking(timeout: 1.0)
