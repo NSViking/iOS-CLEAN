@@ -21,6 +21,10 @@ class UserRepository {
 }
 
 extension UserRepository: UserRepositoryContract {
+    func hasUsers() -> Bool {
+        return self.dataBaseClient.hasUsers()
+    }
+    
 	func getUsers(pagination: Pagination) -> Single<[User]> {
 		return self.httpClient
 			.getUsers(url: "")

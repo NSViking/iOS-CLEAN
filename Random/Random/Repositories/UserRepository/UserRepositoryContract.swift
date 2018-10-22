@@ -14,6 +14,7 @@ protocol UserRepositoryContract {
     func getUserById(id: String) -> Single<User>
     func saveUsers(users: [User])
     func getUsers() -> Single<[User]>
+    func hasUsers() -> Bool
 }
 
 enum UserRepositoryError: Swift.Error, CustomStringConvertible {

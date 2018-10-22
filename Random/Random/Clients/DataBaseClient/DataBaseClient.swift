@@ -45,4 +45,11 @@ class DataBaseClient: DataBaseClientContract {
             }
         }
     }
+    
+    func hasUsers() -> Bool {
+        let realm = try! Realm()
+        
+        let count = realm.objects(UserDataBase.self).count
+        return count > 0
+    }
 }
