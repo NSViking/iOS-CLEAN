@@ -494,8 +494,8 @@
 		5C8BDF37217CA10B0013BBB7 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				2DDF5FE9217D49EA00E21ECF /* PersistedData */,
 				5C8BDF4E217CB62E0013BBB7 /* Mappers */,
+				2DDF5FE9217D49EA00E21ECF /* PersistedData */,
 				2D29CC20217D30E000C046B9 /* ViewData */,
 				5C8BDF43217CAA280013BBB7 /* DomainData */,
 				5C8BDF42217CAA110013BBB7 /* NetworkData */,

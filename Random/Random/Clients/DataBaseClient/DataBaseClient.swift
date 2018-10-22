@@ -23,7 +23,7 @@ class DataBaseClient: DataBaseClientContract {
     func getUserBy(id: String) -> Single<UserDataBase> {
         let realm = try! Realm()
         
-        let predicate = NSPredicate(format: "idUser == %d", id)
+        let predicate = NSPredicate(format: "idUser == %@", id)
         guard let user = realm.objects(UserDataBase.self).filter(predicate).first else {
             return Single.error(DataBaseClientError.notFound)
         }

@@ -23,6 +23,7 @@ class HomePresenter {
     init(interactor: HomeInteractorContract, view: HomeViewContract, router: HomeRouterContract) {
         self.interactor = interactor
         self.view = view
+        self.router = router
     }
 }
 

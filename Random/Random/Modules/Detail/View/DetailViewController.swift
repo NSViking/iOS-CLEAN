@@ -26,6 +26,11 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         setupUI()
+        setupData()
+    }
+    
+    func setupData() {
+        self.presenter?.setupData()
     }
 }
 
@@ -33,11 +38,13 @@ extension DetailViewController: DetailViewContract {
 
     func renderUserInfo(userDetail: UserDetailViewModel) {
         
+        self.title = userDetail.username
+        
         self.usernameLabel.text = userDetail.username
         self.emailLabel.text = userDetail.email
         self.locationLabel.text = userDetail.location
         self.registeredDateLabel.text = userDetail.registeredDate
-        self.genderImageView.image = userDetail.gender == "female" ? UIImage(named: "masculine") : UIImage(named: "femenine")
+        self.genderImageView.image = userDetail.gender == "female" ? UIImage(named: "femenine") : UIImage(named: "masculine")
         
         if let url = URL(string: userDetail.picture) {
             userImageView.af_setImage(withURL: url, imageTransition: .crossDissolve(0.2))
