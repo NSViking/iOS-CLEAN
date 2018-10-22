@@ -16,6 +16,7 @@ class HomeCollectionViewCell: UICollectionViewCell {
     var nameLabel = UILabel()
     var emailLabel = UILabel()
     var phoneButton = RoundedButton()
+    var removeButton = UIButton()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
