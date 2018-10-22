@@ -19,6 +19,7 @@ extension HomeCollectionViewCell {
         setupUserNameLabelProperties()
         setupEmailLabelProperties()
         setupPhoneButtonProperties()
+        setupRemoveButtonProperties()
     }
     
     func setupSubViews() {
@@ -27,6 +28,7 @@ extension HomeCollectionViewCell {
         self.contentView.addSubview(nameLabel)
         self.contentView.addSubview(emailLabel)
         self.contentView.addSubview(phoneButton)
+        self.contentView.addSubview(removeButton)
     }
 }
 
@@ -60,6 +62,13 @@ private extension HomeCollectionViewCell {
             maker.right.equalToSuperview().offset(-35)
             maker.height.equalTo(45)
             maker.top.equalTo(emailLabel.snp.bottom).offset(15)
+        }
+        
+        removeButton.snp.makeConstraints { maker in
+            maker.right.equalToSuperview().offset(-15)
+            maker.top.equalToSuperview().offset(15)
+            maker.height.equalTo(50)
+            maker.width.equalTo(50)
         }
     }
     
@@ -98,5 +107,9 @@ private extension HomeCollectionViewCell {
     
     func setupPhoneButtonProperties() {
         phoneButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
+    }
+    
+    func setupRemoveButtonProperties() {
+        self.removeButton.setImage(UIImage(named: "remove.png"), for: .normal)
     }
 }

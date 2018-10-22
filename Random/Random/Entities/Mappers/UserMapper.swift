@@ -31,6 +31,7 @@ class UserMapper {
     
     class func mapUserToUserViewModel(user: User) -> UserViewModel {
         let userViewModel = UserViewModel()
+        userViewModel.userId = user.id
         userViewModel.username = user.name.capitalized + " " + user.lastname.capitalized
         userViewModel.email = user.email
         userViewModel.phone = user.phone
@@ -44,8 +45,9 @@ class UserMapper {
         userViewModel.username = user.name.capitalized + " " + user.lastname.capitalized
         userViewModel.email = user.email
         userViewModel.phone = user.phone
+        userViewModel.gender = user.gender
         userViewModel.picture = user.picture
-        userViewModel.location = user.street.capitalized + " ," + user.city.capitalized + " ," + user.state.capitalized
+        userViewModel.location = user.street.capitalized + ",\n" + user.city.capitalized + ",\n" + user.state.capitalized
         userViewModel.registeredDate = user.registeredDate
         
         return userViewModel
