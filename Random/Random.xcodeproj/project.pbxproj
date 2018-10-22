@@ -43,6 +43,8 @@
 		2DDF5FDE217D455B00E21ECF /* DetailViewMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DDF5FDD217D455B00E21ECF /* DetailViewMock.swift */; };
 		2DDF5FE1217D45DB00E21ECF /* DetailInteractorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DDF5FE0217D45DB00E21ECF /* DetailInteractorMock.swift */; };
 		2DDF5FE3217D465500E21ECF /* DetailPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DDF5FE2217D465500E21ECF /* DetailPresenterTests.swift */; };
+		2DDF5FEB217D49EA00E21ECF /* UserDataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DDF5FEA217D49EA00E21ECF /* UserDataBase.swift */; };
+		2DDF5FED217D4AFB00E21ECF /* LocationDataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DDF5FEC217D4AFB00E21ECF /* LocationDataBase.swift */; };
 		5C8BDF2E217C90660013BBB7 /* APIModuleTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8BDF2D217C90660013BBB7 /* APIModuleTest.swift */; };
 		5C8BDF34217CA0B60013BBB7 /* UserRepositoryContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8BDF33217CA0B60013BBB7 /* UserRepositoryContract.swift */; };
 		5C8BDF36217CA0BE0013BBB7 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8BDF35217CA0BE0013BBB7 /* UserRepository.swift */; };
@@ -126,6 +128,8 @@
 		2DDF5FDD217D455B00E21ECF /* DetailViewMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewMock.swift; sourceTree = "<group>"; };
 		2DDF5FE0217D45DB00E21ECF /* DetailInteractorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInteractorMock.swift; sourceTree = "<group>"; };
 		2DDF5FE2217D465500E21ECF /* DetailPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenterTests.swift; sourceTree = "<group>"; };
+		2DDF5FEA217D49EA00E21ECF /* UserDataBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDataBase.swift; sourceTree = "<group>"; };
+		2DDF5FEC217D4AFB00E21ECF /* LocationDataBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDataBase.swift; sourceTree = "<group>"; };
 		51ED68883FF18F7168318468 /* Pods-Random.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Random.release.xcconfig"; path = "Pods/Target Support Files/Pods-Random/Pods-Random.release.xcconfig"; sourceTree = "<group>"; };
 		57614BC2836313B8B16D0917 /* Pods-RandomTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RandomTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RandomTests/Pods-RandomTests.release.xcconfig"; sourceTree = "<group>"; };
 		5C8BDF2D217C90660013BBB7 /* APIModuleTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = APIModuleTest.swift; path = RandomTests/UnitTests/APIModule/APIModuleTest.swift; sourceTree = SOURCE_ROOT; };
@@ -414,6 +418,15 @@
 			path = Client;
 			sourceTree = "<group>";
 		};
+		2DDF5FE9217D49EA00E21ECF /* PersistedData */ = {
+			isa = PBXGroup;
+			children = (
+				2DDF5FEA217D49EA00E21ECF /* UserDataBase.swift */,
+				2DDF5FEC217D4AFB00E21ECF /* LocationDataBase.swift */,
+			);
+			path = PersistedData;
+			sourceTree = "<group>";
+		};
 		452E9A64F0499FFDB6984585 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -443,6 +456,7 @@
 		5C8BDF37217CA10B0013BBB7 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				2DDF5FE9217D49EA00E21ECF /* PersistedData */,
 				5C8BDF4E217CB62E0013BBB7 /* Mappers */,
 				2D29CC20217D30E000C046B9 /* ViewData */,
 				5C8BDF43217CAA280013BBB7 /* DomainData */,
@@ -753,6 +767,8 @@
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/Device/Device.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
@@ -766,6 +782,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Device.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
@@ -805,10 +823,12 @@
 				2D29CC1F217D2FC900C046B9 /* Results.swift in Sources */,
 				2DDF5FC2217D3A3300E21ECF /* Devices.swift in Sources */,
 				2D29CC16217D1E6900C046B9 /* HomeCollectionViewCell+Layout.swift in Sources */,
+				2DDF5FEB217D49EA00E21ECF /* UserDataBase.swift in Sources */,
 				2DDF5FD6217D420D00E21ECF /* DetailViewContract.swift in Sources */,
 				5C8BDF55217CB7B60013BBB7 /* HomeInteractorContract.swift in Sources */,
 				5C8BDF3B217CA1A70013BBB7 /* UserData.swift in Sources */,
 				2D29CC24217D354100C046B9 /* Colors.swift in Sources */,
+				2DDF5FED217D4AFB00E21ECF /* LocationDataBase.swift in Sources */,
 				2D29CC19217D203C00C046B9 /* Views.swift in Sources */,
 				2D29CC1B217D229F00C046B9 /* HomeConfigurator.swift in Sources */,
 				5C8BDF39217CA1130013BBB7 /* Pagination.swift in Sources */,
