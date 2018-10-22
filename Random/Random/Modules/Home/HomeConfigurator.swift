@@ -27,8 +27,11 @@ extension HomeConfigurator {
         let dataBaseClient = DataBaseClient()
         let repo = UserRepository(httpClient: client, dataBaseClient: dataBaseClient)
         let pagination = Pagination()
+        
+        let router = HomeRouter(view: viewController)
+        
         let interactor = HomeInteractor(repo: repo, pagination: pagination)
-        let presenter = HomePresenter(interactor: interactor, view: viewController)
+        let presenter = HomePresenter(interactor: interactor, view: viewController, router: router)
         
         viewController.presenter = presenter
     }

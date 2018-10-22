@@ -10,6 +10,7 @@ import Foundation
 
 class UserViewModel {
     
+    var userId: String = ""
     var username: String = ""
     var phone: String = ""
     var email: String = ""

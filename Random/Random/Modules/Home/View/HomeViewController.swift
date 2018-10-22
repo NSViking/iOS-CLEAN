@@ -63,7 +63,7 @@ extension HomeViewController: UICollectionViewDataSource {
 
 extension HomeViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        // TODO: Connect presenter, go to detail
+        self.presenter?.goToDetail(index: indexPath.row)
     }
 }
 

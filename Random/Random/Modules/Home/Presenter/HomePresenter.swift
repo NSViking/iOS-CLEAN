@@ -10,6 +10,8 @@ import Foundation
 import RxSwift
 
 class HomePresenter {
+    
+    var router: HomeRouterContract
     var interactor: HomeInteractorContract
     weak var view: HomeViewContract?
     
@@ -18,7 +20,7 @@ class HomePresenter {
     //RxSwift
     let disposeBag = DisposeBag()
     
-    init(interactor: HomeInteractorContract, view: HomeViewContract) {
+    init(interactor: HomeInteractorContract, view: HomeViewContract, router: HomeRouterContract) {
         self.interactor = interactor
         self.view = view
     }
@@ -56,6 +58,11 @@ extension HomePresenter: HomePresenterContract {
     
     func getDataAt(index: Int) -> UserViewModel {
         return self.dataSource[index]
+    }
+    
+    func goToDetail(index: Int) {
+        let userModel = self.dataSource[index]
+        self.router.goToUserDetail(userId: userModel.userId)
     }
 }
 

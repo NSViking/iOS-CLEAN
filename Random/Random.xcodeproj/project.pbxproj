@@ -50,6 +50,9 @@
 		2DDF5FF4217D5ADF00E21ECF /* IdUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DDF5FF3217D5ADF00E21ECF /* IdUser.swift */; };
 		2DDF5FF6217D60DC00E21ECF /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DDF5FF5217D60DC00E21ECF /* DetailViewController.swift */; };
 		2DDF5FF8217D60E300E21ECF /* DetailViewController+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DDF5FF7217D60E300E21ECF /* DetailViewController+Layout.swift */; };
+		2DDF5FFB217D66B300E21ECF /* HomeRouterContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DDF5FFA217D66B300E21ECF /* HomeRouterContract.swift */; };
+		2DDF5FFD217D66B900E21ECF /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DDF5FFC217D66B900E21ECF /* HomeRouter.swift */; };
+		2DDF5FFF217D673B00E21ECF /* DetailConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DDF5FFE217D673B00E21ECF /* DetailConfigurator.swift */; };
 		5C8BDF2E217C90660013BBB7 /* APIModuleTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8BDF2D217C90660013BBB7 /* APIModuleTest.swift */; };
 		5C8BDF34217CA0B60013BBB7 /* UserRepositoryContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8BDF33217CA0B60013BBB7 /* UserRepositoryContract.swift */; };
 		5C8BDF36217CA0BE0013BBB7 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8BDF35217CA0BE0013BBB7 /* UserRepository.swift */; };
@@ -140,6 +143,9 @@
 		2DDF5FF3217D5ADF00E21ECF /* IdUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdUser.swift; sourceTree = "<group>"; };
 		2DDF5FF5217D60DC00E21ECF /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		2DDF5FF7217D60E300E21ECF /* DetailViewController+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailViewController+Layout.swift"; sourceTree = "<group>"; };
+		2DDF5FFA217D66B300E21ECF /* HomeRouterContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouterContract.swift; sourceTree = "<group>"; };
+		2DDF5FFC217D66B900E21ECF /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
+		2DDF5FFE217D673B00E21ECF /* DetailConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailConfigurator.swift; sourceTree = "<group>"; };
 		51ED68883FF18F7168318468 /* Pods-Random.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Random.release.xcconfig"; path = "Pods/Target Support Files/Pods-Random/Pods-Random.release.xcconfig"; sourceTree = "<group>"; };
 		57614BC2836313B8B16D0917 /* Pods-RandomTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RandomTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RandomTests/Pods-RandomTests.release.xcconfig"; sourceTree = "<group>"; };
 		5C8BDF2D217C90660013BBB7 /* APIModuleTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = APIModuleTest.swift; path = RandomTests/UnitTests/APIModule/APIModuleTest.swift; sourceTree = SOURCE_ROOT; };
@@ -328,6 +334,7 @@
 		2DDF5FC3217D3B0B00E21ECF /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				2DDF5FFE217D673B00E21ECF /* DetailConfigurator.swift */,
 				2DDF5FD4217D420200E21ECF /* View */,
 				2DDF5FCF217D40BE00E21ECF /* Presenter */,
 				2DDF5FC4217D3B1400E21ECF /* Interactor */,
@@ -449,6 +456,15 @@
 			path = DataBaseClient;
 			sourceTree = "<group>";
 		};
+		2DDF5FF9217D66A400E21ECF /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				2DDF5FFA217D66B300E21ECF /* HomeRouterContract.swift */,
+				2DDF5FFC217D66B900E21ECF /* HomeRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
 		452E9A64F0499FFDB6984585 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -552,6 +568,7 @@
 		5C8BDF52217CB79F0013BBB7 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				2DDF5FF9217D66A400E21ECF /* Router */,
 				2D29CBFE217D142600C046B9 /* View */,
 				2D29CC01217D142F00C046B9 /* Presenter */,
 				5C8BDF53217CB7AA0013BBB7 /* Interactor */,
@@ -857,8 +874,11 @@
 				2D29CC24217D354100C046B9 /* Colors.swift in Sources */,
 				2DDF5FED217D4AFB00E21ECF /* LocationDataBase.swift in Sources */,
 				2D29CC19217D203C00C046B9 /* Views.swift in Sources */,
+				2DDF5FFF217D673B00E21ECF /* DetailConfigurator.swift in Sources */,
 				2D29CC1B217D229F00C046B9 /* HomeConfigurator.swift in Sources */,
+				2DDF5FFD217D66B900E21ECF /* HomeRouter.swift in Sources */,
 				5C8BDF39217CA1130013BBB7 /* Pagination.swift in Sources */,
+				2DDF5FFB217D66B300E21ECF /* HomeRouterContract.swift in Sources */,
 				2DDF5FD1217D40C800E21ECF /* DetailPresenter.swift in Sources */,
 				5C8BDF41217CA9F00013BBB7 /* User.swift in Sources */,
 				2DDF5FF8217D60E300E21ECF /* DetailViewController+Layout.swift in Sources */,

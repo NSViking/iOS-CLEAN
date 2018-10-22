@@ -22,6 +22,8 @@ class DetailViewController: UIViewController {
     var userImageView = UIImageView()
     var map = MKMapView()
     
+    var presenter: DetailPresenterContract?
+    
     override func viewDidLoad() {
         setupUI()
     }
