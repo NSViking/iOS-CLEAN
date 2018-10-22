@@ -9,6 +9,7 @@
 import Foundation
 
 class UserData: Codable {
+    var id: IdUser?
 	var name: NameData?
     var email: String = ""
 	var phone: String = ""

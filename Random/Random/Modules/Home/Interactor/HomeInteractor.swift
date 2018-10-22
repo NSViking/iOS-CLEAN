@@ -22,6 +22,7 @@ class HomeInteractor {
 extension HomeInteractor: HomeInteractorContract {
     func getUsers() -> Single<[User]> {
         return self.repo.getUsers(pagination: self.pagination)
+            .flatMap({self.saveUsersAndRetrieve(users: $0)})
             .catchError { error -> Single<[User]> in
             return Single.error(HomeInteractorError.generic)
         }
@@ -30,8 +31,18 @@ extension HomeInteractor: HomeInteractorContract {
     func getMoreUsers() -> Single<[User]> {
         self.pagination.next()
         return self.repo.getUsers(pagination: self.pagination)
+            .flatMap({self.saveUsersAndRetrieve(users: $0)})
             .catchError { error -> Single<[User]> in
                 return Single.error(HomeInteractorError.generic)
         }
     }
 }
+
+private extension HomeInteractor {
+    
+    func saveUsersAndRetrieve(users: [User]) -> Single<[User]> {
+        self.repo.saveUsers(users: users)
+        return self.repo.getUsers()
+    }
+}
+

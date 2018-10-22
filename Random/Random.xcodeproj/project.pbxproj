@@ -47,6 +47,7 @@
 		2DDF5FED217D4AFB00E21ECF /* LocationDataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DDF5FEC217D4AFB00E21ECF /* LocationDataBase.swift */; };
 		2DDF5FF0217D4C0700E21ECF /* DataBaseClientContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DDF5FEF217D4C0700E21ECF /* DataBaseClientContract.swift */; };
 		2DDF5FF2217D4C0D00E21ECF /* DataBaseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DDF5FF1217D4C0D00E21ECF /* DataBaseClient.swift */; };
+		2DDF5FF4217D5ADF00E21ECF /* IdUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DDF5FF3217D5ADF00E21ECF /* IdUser.swift */; };
 		5C8BDF2E217C90660013BBB7 /* APIModuleTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8BDF2D217C90660013BBB7 /* APIModuleTest.swift */; };
 		5C8BDF34217CA0B60013BBB7 /* UserRepositoryContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8BDF33217CA0B60013BBB7 /* UserRepositoryContract.swift */; };
 		5C8BDF36217CA0BE0013BBB7 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8BDF35217CA0BE0013BBB7 /* UserRepository.swift */; };
@@ -134,6 +135,7 @@
 		2DDF5FEC217D4AFB00E21ECF /* LocationDataBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDataBase.swift; sourceTree = "<group>"; };
 		2DDF5FEF217D4C0700E21ECF /* DataBaseClientContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseClientContract.swift; sourceTree = "<group>"; };
 		2DDF5FF1217D4C0D00E21ECF /* DataBaseClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseClient.swift; sourceTree = "<group>"; };
+		2DDF5FF3217D5ADF00E21ECF /* IdUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdUser.swift; sourceTree = "<group>"; };
 		51ED68883FF18F7168318468 /* Pods-Random.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Random.release.xcconfig"; path = "Pods/Target Support Files/Pods-Random/Pods-Random.release.xcconfig"; sourceTree = "<group>"; };
 		57614BC2836313B8B16D0917 /* Pods-RandomTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RandomTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RandomTests/Pods-RandomTests.release.xcconfig"; sourceTree = "<group>"; };
 		5C8BDF2D217C90660013BBB7 /* APIModuleTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = APIModuleTest.swift; path = RandomTests/UnitTests/APIModule/APIModuleTest.swift; sourceTree = SOURCE_ROOT; };
@@ -488,6 +490,7 @@
 				5C8BDF44217CAAD10013BBB7 /* RegisteredData.swift */,
 				5C8BDF46217CAB630013BBB7 /* LocationData.swift */,
 				2D29CC1E217D2FC900C046B9 /* Results.swift */,
+				2DDF5FF3217D5ADF00E21ECF /* IdUser.swift */,
 			);
 			path = NetworkData;
 			sourceTree = "<group>";
@@ -836,6 +839,7 @@
 				2D38E5BD217B452200516C65 /* HTTPClient.swift in Sources */,
 				2D29CC0E217D1BFF00C046B9 /* HomeViewController+Layout.swift in Sources */,
 				2DDF5FD8217D422F00E21ECF /* UserDetailViewModel.swift in Sources */,
+				2DDF5FF4217D5ADF00E21ECF /* IdUser.swift in Sources */,
 				2D29CC1F217D2FC900C046B9 /* Results.swift in Sources */,
 				2DDF5FC2217D3A3300E21ECF /* Devices.swift in Sources */,
 				2D29CC16217D1E6900C046B9 /* HomeCollectionViewCell+Layout.swift in Sources */,

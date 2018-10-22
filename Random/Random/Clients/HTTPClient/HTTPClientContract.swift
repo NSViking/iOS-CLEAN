@@ -14,7 +14,7 @@ protocol HTTPClientContract {
 }
 
 enum HTTPClientError: Swift.Error, CustomStringConvertible {
-	var description: String { return "MomentsServiceClientError.." }
+	var description: String { return "HTTPClientError.." }
 	case noContentError
 	case noConnectionError
 	case genericError

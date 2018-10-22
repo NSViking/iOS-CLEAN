@@ -12,11 +12,15 @@ import RxSwift
 
 protocol DataBaseClientContract {
     func getUsers() -> Single<[UserDataBase]>
+    func getUserBy(id: String) -> Single<UserDataBase>
+    func saveUsers(users: [UserDataBase])
 }
 
 enum DataBaseClientError: Swift.Error, CustomStringConvertible {
     var description: String { return "DataBaseClientError.." }
+    case notFound
     case genericError
 }
+
 
 

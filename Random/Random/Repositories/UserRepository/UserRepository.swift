@@ -12,9 +12,11 @@ import RxSwift
 class UserRepository {
 	
 	var httpClient: HTTPClientContract
+    var dataBaseClient: DataBaseClientContract
 	
-	init(httpClient: HTTPClientContract) {
+	init(httpClient: HTTPClientContract, dataBaseClient: DataBaseClientContract) {
 		self.httpClient = httpClient
+        self.dataBaseClient = dataBaseClient
 	}
 }
 
@@ -33,6 +35,29 @@ extension UserRepository: UserRepositoryContract {
     
     func getUserById(id: String) -> Single<User> {
         //TODO: Connect with persistent client
-        return Single.just(User())
+        return self.dataBaseClient
+            .getUserBy(id: id)
+            .map { userDataBase -> User in
+            return UserMapper.mapUserDataBaseToUser(userDataBase: userDataBase)
+        }
+    }
+    
+    func saveUsers(users: [User]) {
+        let usersDataBase = users.map { user -> UserDataBase in
+            return UserMapper.mapUserToUserDataBase(user: user)
+        }
+        self.dataBaseClient.saveUsers(users: usersDataBase)
+    }
+    
+    func getUsers() -> Single<[User]> {
+        return self.dataBaseClient
+            .getUsers()
+            .map { userDataBaseArray -> [User] in
+                return userDataBaseArray.map { userDataBase -> User in
+                    return UserMapper.mapUserDataBaseToUser(userDataBase: userDataBase)
+                }
+            }.catchError { error -> Single<[User]> in
+                return Single.error(UserRepositoryError.mapping)
+        }
     }
 }
