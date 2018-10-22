@@ -10,6 +10,7 @@ import Foundation
 import RealmSwift
 
 class UserDataBase: Object {
+    @objc dynamic var idUser = ""
     @objc dynamic var title = ""
     @objc dynamic var first = ""
     @objc dynamic var last = ""
@@ -19,4 +20,5 @@ class UserDataBase: Object {
     @objc dynamic var picture = ""
     @objc dynamic var registered = ""
     @objc dynamic var location: LocationDataBase? = nil
+    @objc dynamic var deleted = 0
 }
