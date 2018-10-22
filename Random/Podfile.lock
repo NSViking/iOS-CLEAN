@@ -12,6 +12,11 @@ PODS:
   - Moya/RxSwift (11.0.2):
     - Moya/Core
     - RxSwift (~> 4.0)
+  - Realm (3.11.1):
+    - Realm/Headers (= 3.11.1)
+  - Realm/Headers (3.11.1)
+  - RealmSwift (3.11.1):
+    - Realm (= 3.11.1)
   - Result (3.2.4)
   - RxBlocking (4.3.1):
     - RxSwift (~> 4.0)
@@ -28,6 +33,7 @@ DEPENDENCIES:
   - Mockit
   - Moya
   - Moya/RxSwift
+  - RealmSwift
   - RxBlocking
   - RxCocoa
   - RxSwift
@@ -41,6 +47,8 @@ SPEC REPOS:
     - Device
     - Mockit
     - Moya
+    - Realm
+    - RealmSwift
     - Result
     - RxBlocking
     - RxCocoa
@@ -54,6 +62,8 @@ SPEC CHECKSUMS:
   Device: 62242076214c30fb5760174b3601cefafa70a481
   Mockit: 03fd83ba6d0f71bc4af6d2745ac7a01b084ab3ca
   Moya: a725035953bc1c0eb1be505ab903984501d82440
+  Realm: 037c5919b9ceb59d6beed5d3b031096856b119b3
+  RealmSwift: c9580133e73ef40ed340401af2dbc9a5790dfea7
   Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
   RxBlocking: 64c051285261ca2339481e91b5f70eb06b03660a
   RxCocoa: 78763c7b07d02455598d9fc3c1ad091a28b73635
@@ -61,6 +71,6 @@ SPEC CHECKSUMS:
   RxTest: ea97a208826906f3904c0debdd09575ebcbfe216
   SnapKit: 0de968a9fec17499afa29683b05d0c775b6d1c29
 
-PODFILE CHECKSUM: 24d2676b1ae285d29adfe9d945555ba1e8ba5ea1
+PODFILE CHECKSUM: 44007cf6812ecc4c4520014fc25574527797e485
 
 COCOAPODS: 1.5.3

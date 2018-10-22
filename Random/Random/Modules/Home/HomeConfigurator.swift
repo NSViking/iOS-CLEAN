@@ -24,7 +24,8 @@ extension HomeConfigurator {
     class func configure(_ viewController: HomeViewController) {
         
         let client = HTTPClient()
-        let repo = UserRepository(httpClient: client)
+        let dataBaseClient = DataBaseClient()
+        let repo = UserRepository(httpClient: client, dataBaseClient: dataBaseClient)
         let pagination = Pagination()
         let interactor = HomeInteractor(repo: repo, pagination: pagination)
         let presenter = HomePresenter(interactor: interactor, view: viewController)

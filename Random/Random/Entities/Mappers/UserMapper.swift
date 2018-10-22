@@ -11,6 +11,10 @@ import Foundation
 class UserMapper {
 	class func mapUserDataToUser(userData: UserData) -> User {
 		let user = User()
+        //Sometimes the id is null so we customize our ID as (ID + Name)
+        let keyID = (userData.id?.name ?? "") + (userData.id?.value ?? "")
+        let keyName = (userData.name?.first ?? "") + (userData.name?.last ?? "")
+        user.id = keyID + keyName
 		user.name = userData.name?.first ?? ""
 		user.lastname = userData.name?.last ?? ""
         user.email = userData.email
@@ -45,5 +49,45 @@ class UserMapper {
         userViewModel.registeredDate = user.registeredDate
         
         return userViewModel
+    }
+    
+    class func mapUserDataBaseToUser(userDataBase: UserDataBase) -> User  {
+        let user = User()
+        
+        user.city = userDataBase.location?.city ?? ""
+        user.email = userDataBase.email
+        user.gender = userDataBase.gender
+        user.id = userDataBase.idUser
+        user.lastname = userDataBase.last
+        user.name = userDataBase.first
+        user.phone = userDataBase.phone
+        user.picture = userDataBase.picture
+        user.registeredDate = userDataBase.registered
+        user.state = userDataBase.location?.state ?? ""
+        user.street = userDataBase.location?.street ?? ""
+        
+        return user
+    }
+    
+    class func mapUserToUserDataBase(user: User) -> UserDataBase  {
+        let userDataBase = UserDataBase()
+        
+        userDataBase.email = user.email
+        userDataBase.gender = user.gender
+        userDataBase.idUser = user.id
+        userDataBase.last = user.lastname
+        userDataBase.first = user.name
+        userDataBase.phone = user.phone
+        userDataBase.picture = user.picture
+        userDataBase.registered = user.registeredDate
+        
+        let location = LocationDataBase()
+        location.city = user.city
+        location.state = user.state
+        location.street = user.street
+        
+        userDataBase.location = location
+        
+        return userDataBase
     }
 }

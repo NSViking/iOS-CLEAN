@@ -1,5 +1,5 @@
 //
-//  Results.swift
+//  IdUser.swift
 //  Random
 //
 //  Created by Víctor Vicente on 22/10/2018.
@@ -8,6 +8,7 @@
 
 import Foundation
 
-class Results: Codable {
-    var results: [UserData] = []
+class IdUser: Codable {
+    var name: String?
+    var value: String?
 }
