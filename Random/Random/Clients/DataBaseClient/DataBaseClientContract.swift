@@ -15,6 +15,7 @@ protocol DataBaseClientContract {
     func getUserBy(id: String) -> Single<UserDataBase>
     func saveUsers(users: [UserDataBase])
     func hasUsers() -> Bool
+    func removeUser(id: String)
 }
 
 enum DataBaseClientError: Swift.Error, CustomStringConvertible {

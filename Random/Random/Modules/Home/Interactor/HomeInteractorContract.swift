@@ -12,6 +12,7 @@ import RxSwift
 protocol HomeInteractorContract {
 	func getUsers() -> Single<[User]>
     func getMoreUsers() -> Single<[User]>
+    func removeUser(id: String)
 }
 
 enum HomeInteractorError: Swift.Error, CustomStringConvertible {

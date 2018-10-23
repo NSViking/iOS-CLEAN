@@ -52,4 +52,15 @@ class DataBaseClient: DataBaseClientContract {
         let count = realm.objects(UserDataBase.self).count
         return count > 0
     }
+    
+    func removeUser(id: String) {
+        let realm = try! Realm()
+        
+        let predicate = NSPredicate(format: "idUser == %@", "\(id)")
+        let userK = realm.objects(UserDataBase.self).filter(predicate).first
+        
+        try! realm.write {
+            userK?.deleted = 1
+        }
+    }
 }

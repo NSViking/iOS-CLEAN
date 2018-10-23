@@ -17,4 +17,6 @@ protocol HomePresenterContract {
     func getDataAt(index: Int) -> UserViewModel
     
     func goToDetail(index: Int)
+    
+    func removeUser(id: String)
 }
