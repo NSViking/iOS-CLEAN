@@ -68,4 +68,15 @@ extension UserRepository: UserRepositoryContract {
     func removeUser(id: String) {
         self.dataBaseClient.removeUser(id: id)
     }
+	
+	func filterUsers(nameToSearch: String) -> Single<[User]>  {
+		return self.dataBaseClient.getUsersContains(data: nameToSearch)
+			.map { userDataBaseArray -> [User] in
+				return userDataBaseArray.map { userDataBase -> User in
+					return UserMapper.mapUserDataBaseToUser(userDataBase: userDataBase)
+				}
+			}.catchError { error -> Single<[User]> in
+				return Single.error(UserRepositoryError.mapping)
+		}
+	}
 }

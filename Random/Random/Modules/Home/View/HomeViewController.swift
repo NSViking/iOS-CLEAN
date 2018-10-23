@@ -15,16 +15,23 @@ class HomeViewController: UIViewController {
     lazy var collectionView: UICollectionView = UICollectionView(frame: .zero, collectionViewLayout: self.flowLayout)
     
     var presenter: HomePresenterContract?
+	
+	var searchMode = false
     
     override func viewDidLoad() {
         self.setupUI()
-        self.setupAutoLayout()
         self.setupData()
     }
     
     func setupData() {
         self.presenter?.setupData()
     }
+	
+	@objc func resetSearch() {
+		self.searchMode = false
+		self.setupData()
+		self.removeResetButton()
+	}
 }
 
 extension HomeViewController: HomeViewContract {
@@ -35,6 +42,21 @@ extension HomeViewController: HomeViewContract {
     
     func reloadData() {
         self.collectionView.reloadData()
+    }
+}
+
+extension HomeViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+		
+		if let text = searchController.searchBar.text, text.count > 0 {
+			searchMode = true
+			self.setupResetButton()
+			guard let textToSearch = searchController.searchBar.text, textToSearch != "" else {
+				self.setupData()
+				return
+			}
+			self.presenter?.filterUsers(nameToSearch: textToSearch)
+		}
     }
 }
 
@@ -101,24 +123,29 @@ extension HomeViewController {
         return UICollectionReusableView()
     }
     
-    func collectionView(_ collectionView: UICollectionView, willDisplaySupplementaryView view: UICollectionReusableView, forElementKind elementKind: String, at indexPath: IndexPath) {
-        if elementKind == UICollectionView.elementKindSectionFooter {
-            
-            if let loadingView = view.viewWithTag(kFooterViewTag) as? UIActivityIndicatorView {
-                loadingView.startAnimating()
-                self.presenter?.getMoreData()
-            }
-        }
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didEndDisplayingSupplementaryView view: UICollectionReusableView, forElementOfKind elementKind: String, at indexPath: IndexPath) {
-        if elementKind == UICollectionView.elementKindSectionFooter{
-            
-            if let loadingView = view.viewWithTag(kFooterViewTag) as? UIActivityIndicatorView{
-                loadingView.stopAnimating()
-                loadingView.removeFromSuperview()
-            }
-        }
+	func collectionView(_ collectionView: UICollectionView, willDisplaySupplementaryView view: UICollectionReusableView, forElementKind elementKind: String, at indexPath: IndexPath) {
+		if elementKind == UICollectionView.elementKindSectionFooter {
+			
+			guard let footerView = view as? HomeCollectionFooterView,
+				let dataSourceCount = self.presenter?.getDataSourceCount(),
+				dataSourceCount > 0,
+				searchMode == false else {
+					return
+			}
+			
+			footerView.loading.startAnimating()
+			self.presenter?.getMoreData()
+		}
+	}
+	
+	func collectionView(_ collectionView: UICollectionView, didEndDisplayingSupplementaryView view: UICollectionReusableView, forElementOfKind elementKind: String, at indexPath: IndexPath) {
+		if elementKind == UICollectionView.elementKindSectionFooter {
+			
+			let footerView = collectionView.dequeueReusableSupplementaryView(ofKind: elementKind, withReuseIdentifier: HomeCollectionFooterView.identifier(), for: indexPath) as? HomeCollectionFooterView
+			
+			footerView?.loading.stopAnimating()
+			footerView?.loading.removeFromSuperview()
+		}
     }
 }
 

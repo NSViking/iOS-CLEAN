@@ -40,6 +40,10 @@ extension HomeInteractor: HomeInteractorContract {
                 return Single.error(HomeInteractorError.generic)
         }
     }
+	
+	func filterUsers(nameToSearch: String) -> Single<[User]> {
+		return self.repo.filterUsers(nameToSearch: nameToSearch)
+	}
 }
 
 private extension HomeInteractor {

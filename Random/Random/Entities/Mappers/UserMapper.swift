@@ -64,8 +64,8 @@ class UserMapper {
         user.email = userDataBase.email
         user.gender = userDataBase.gender
         user.id = userDataBase.idUser
-        user.lastname = userDataBase.last
-        user.name = userDataBase.first
+        user.lastname = userDataBase.lastname
+        user.name = userDataBase.firstname
         user.phone = userDataBase.phone
         user.picture = userDataBase.picture
         user.registeredDate = userDataBase.registered
@@ -83,8 +83,8 @@ class UserMapper {
         userDataBase.email = user.email
         userDataBase.gender = user.gender
         userDataBase.idUser = user.id
-        userDataBase.last = user.lastname
-        userDataBase.first = user.name
+        userDataBase.lastname = user.lastname
+        userDataBase.firstname = user.name
         userDataBase.phone = user.phone
         userDataBase.picture = user.picture
         userDataBase.registered = user.registeredDate
