@@ -8,6 +8,11 @@
 
 import Foundation
 import AlamofireImage
+import UIKit
+
+protocol HomeCollectionViewCellDelegate: class {
+    func removeButtonDidPress(id: String)
+}
 
 class HomeCollectionViewCell: UICollectionViewCell {
     
@@ -17,6 +22,9 @@ class HomeCollectionViewCell: UICollectionViewCell {
     var emailLabel = UILabel()
     var phoneButton = RoundedButton()
     var removeButton = UIButton()
+    weak var delegate: HomeCollectionViewCellDelegate?
+    
+    private var id: String = ""
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -33,8 +41,9 @@ class HomeCollectionViewCell: UICollectionViewCell {
         userImageView.image = nil
     }
     
-    func configure(userName: String, phone: String, email: String, picture: String) {
+    func configure(userName: String, phone: String, email: String, picture: String, id: String) {
         
+        self.id = id
         nameLabel.text = userName
         phoneButton.setTitle(phone, for: .normal)
         emailLabel.text = email
@@ -42,5 +51,9 @@ class HomeCollectionViewCell: UICollectionViewCell {
         if let url = URL(string: picture) {
             userImageView.af_setImage(withURL: url, imageTransition: .crossDissolve(0.2))
         }
+    }
+    
+    @objc func removeButtonDidPress() {
+        self.delegate?.removeButtonDidPress(id: self.id)
     }
 }

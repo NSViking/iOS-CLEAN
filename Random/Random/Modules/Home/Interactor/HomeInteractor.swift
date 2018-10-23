@@ -20,6 +20,10 @@ class HomeInteractor {
 }
 
 extension HomeInteractor: HomeInteractorContract {
+    func removeUser(id: String) {
+        self.repo.removeUser(id: id)
+    }
+    
     func getUsers() -> Single<[User]> {
         if self.repo.hasUsers() {
             return getUsersFromDataBase()

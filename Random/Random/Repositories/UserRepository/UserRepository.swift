@@ -64,4 +64,8 @@ extension UserRepository: UserRepositoryContract {
                 return Single.error(UserRepositoryError.mapping)
         }
     }
+    
+    func removeUser(id: String) {
+        self.dataBaseClient.removeUser(id: id)
+    }
 }

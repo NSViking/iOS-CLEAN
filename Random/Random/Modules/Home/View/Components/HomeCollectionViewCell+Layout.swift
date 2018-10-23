@@ -111,5 +111,6 @@ private extension HomeCollectionViewCell {
     
     func setupRemoveButtonProperties() {
         self.removeButton.setImage(UIImage(named: "remove.png"), for: .normal)
+        self.removeButton.addTarget(self, action: #selector(removeButtonDidPress), for: .touchUpInside)
     }
 }

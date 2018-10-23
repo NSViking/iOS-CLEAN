@@ -55,7 +55,8 @@ extension HomeViewController: UICollectionViewDataSource {
         guard let userViewModel = self.presenter?.getDataAt(index: indexPath.row) else {
             return cell
         }
-        cell.configure(userName: userViewModel.username, phone: userViewModel.phone, email: userViewModel.email, picture: userViewModel.picture)
+        cell.configure(userName: userViewModel.username, phone: userViewModel.phone, email: userViewModel.email, picture: userViewModel.picture, id: userViewModel.userId)
+        cell.delegate = self
         
         return cell
     }

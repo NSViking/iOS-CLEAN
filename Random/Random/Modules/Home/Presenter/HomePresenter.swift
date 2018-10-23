@@ -65,6 +65,10 @@ extension HomePresenter: HomePresenterContract {
         let userModel = self.dataSource[index]
         self.router.goToUserDetail(userId: userModel.userId)
     }
+    
+    func removeUser(id: String) {
+        self.interactor.removeUser(id: id)
+    }
 }
 
 private extension HomePresenter {
