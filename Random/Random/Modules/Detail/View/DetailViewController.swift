@@ -22,6 +22,8 @@ class DetailViewController: UIViewController {
     var userImageView = UIImageView()
     var map = MKMapView()
     
+    let mainScrollView = UIScrollView()
+    
     var presenter: DetailPresenterContract?
     
     override func viewDidLoad() {
