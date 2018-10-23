@@ -12,6 +12,7 @@ class LocationData: Codable {
 	var street: String
 	var city: String
 	var state: String
+    var coordinates: Coordinates?
 	
 	class func decode(data: Data) -> LocationData {
 		let decoder = JSONDecoder()

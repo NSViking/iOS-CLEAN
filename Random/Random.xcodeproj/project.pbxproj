@@ -56,6 +56,7 @@
 		2DDF6001217D726C00E21ECF /* DataBaseClientMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DDF6000217D726C00E21ECF /* DataBaseClientMock.swift */; };
 		2DDF6004217D739300E21ECF /* HomeRouterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DDF6003217D739300E21ECF /* HomeRouterMock.swift */; };
 		5C201C1E217F169C00C6E924 /* HomeCollectionFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C201C1D217F169C00C6E924 /* HomeCollectionFooterView.swift */; };
+		5C201C20217F1A8E00C6E924 /* Coordinates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C201C1F217F1A8E00C6E924 /* Coordinates.swift */; };
 		5C8BDF2E217C90660013BBB7 /* APIModuleTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8BDF2D217C90660013BBB7 /* APIModuleTest.swift */; };
 		5C8BDF34217CA0B60013BBB7 /* UserRepositoryContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8BDF33217CA0B60013BBB7 /* UserRepositoryContract.swift */; };
 		5C8BDF36217CA0BE0013BBB7 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8BDF35217CA0BE0013BBB7 /* UserRepository.swift */; };
@@ -154,6 +155,7 @@
 		51ED68883FF18F7168318468 /* Pods-Random.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Random.release.xcconfig"; path = "Pods/Target Support Files/Pods-Random/Pods-Random.release.xcconfig"; sourceTree = "<group>"; };
 		57614BC2836313B8B16D0917 /* Pods-RandomTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RandomTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RandomTests/Pods-RandomTests.release.xcconfig"; sourceTree = "<group>"; };
 		5C201C1D217F169C00C6E924 /* HomeCollectionFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionFooterView.swift; sourceTree = "<group>"; };
+		5C201C1F217F1A8E00C6E924 /* Coordinates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinates.swift; sourceTree = "<group>"; };
 		5C8BDF2D217C90660013BBB7 /* APIModuleTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = APIModuleTest.swift; path = RandomTests/UnitTests/APIModule/APIModuleTest.swift; sourceTree = SOURCE_ROOT; };
 		5C8BDF33217CA0B60013BBB7 /* UserRepositoryContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepositoryContract.swift; sourceTree = "<group>"; };
 		5C8BDF35217CA0BE0013BBB7 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
@@ -527,6 +529,7 @@
 				5C8BDF3E217CA3710013BBB7 /* PictureData.swift */,
 				5C8BDF44217CAAD10013BBB7 /* RegisteredData.swift */,
 				5C8BDF46217CAB630013BBB7 /* LocationData.swift */,
+				5C201C1F217F1A8E00C6E924 /* Coordinates.swift */,
 				2D29CC1E217D2FC900C046B9 /* Results.swift */,
 				2DDF5FF3217D5ADF00E21ECF /* IdUser.swift */,
 			);
@@ -897,6 +900,7 @@
 				2DDF5FFD217D66B900E21ECF /* HomeRouter.swift in Sources */,
 				5C8BDF39217CA1130013BBB7 /* Pagination.swift in Sources */,
 				2DDF5FFB217D66B300E21ECF /* HomeRouterContract.swift in Sources */,
+				5C201C20217F1A8E00C6E924 /* Coordinates.swift in Sources */,
 				2DDF5FD1217D40C800E21ECF /* DetailPresenter.swift in Sources */,
 				5C8BDF41217CA9F00013BBB7 /* User.swift in Sources */,
 				2DDF5FF8217D60E300E21ECF /* DetailViewController+Layout.swift in Sources */,

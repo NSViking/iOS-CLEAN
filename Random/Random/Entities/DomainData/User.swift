@@ -20,5 +20,10 @@ class User {
 	var street: String = ""
 	var city: String = ""
 	var state: String = ""
-	
+    var latitude: String = ""
+    var longitude: String = ""
+}
+
+enum Gender: String {
+    case female = "female", male = "male"
 }
