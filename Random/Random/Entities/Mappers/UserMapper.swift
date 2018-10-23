@@ -25,6 +25,8 @@ class UserMapper {
         user.registeredDate = userData.registered?.date ?? ""
         user.street = userData.location?.street ?? ""
         user.state = userData.location?.state ?? ""
+        user.longitude = userData.location?.coordinates?.longitude ?? "0"
+        user.latitude = userData.location?.coordinates?.latitude ?? "0"
 		
 		return user
 	}
@@ -49,6 +51,8 @@ class UserMapper {
         userViewModel.picture = user.picture
         userViewModel.location = user.street.capitalized + ",\n" + user.city.capitalized + ",\n" + user.state.capitalized
         userViewModel.registeredDate = user.registeredDate
+        userViewModel.longitude = user.longitude
+        userViewModel.latitude = user.latitude
         
         return userViewModel
     }
@@ -67,6 +71,8 @@ class UserMapper {
         user.registeredDate = userDataBase.registered
         user.state = userDataBase.location?.state ?? ""
         user.street = userDataBase.location?.street ?? ""
+        user.latitude = userDataBase.location?.latitude ?? "0"
+        user.longitude = userDataBase.location?.longitude ?? "0"
         
         return user
     }
@@ -87,6 +93,8 @@ class UserMapper {
         location.city = user.city
         location.state = user.state
         location.street = user.street
+        location.latitude = user.latitude
+        location.longitude = user.longitude
         
         userDataBase.location = location
         

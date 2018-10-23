@@ -22,6 +22,8 @@ class DetailViewController: UIViewController {
     var userImageView = UIImageView()
     var map = MKMapView()
     
+    let mainScrollView = UIScrollView()
+    
     var presenter: DetailPresenterContract?
     
     override func viewDidLoad() {
@@ -31,6 +33,22 @@ class DetailViewController: UIViewController {
     
     func setupData() {
         self.presenter?.setupData()
+    }
+    
+    func addAnotation(longitude: Double, latitude: Double) {
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = CLLocationCoordinate2D(latitude: longitude, longitude: latitude)
+        map.addAnnotation(annotation)
+        map.centerCoordinate = annotation.coordinate
+        
+        self.centerMapToPin(annotation: annotation)
+    }
+    
+    func centerMapToPin(annotation: MKPointAnnotation) {
+        let zoomRect = MKMapRect.null
+        let annotationPoint: MKMapPoint = MKMapPoint(annotation.coordinate);
+        let pointRect = MKMapRect(origin: annotationPoint, size: MKMapSize(width: 1000.0, height: 1000.0))
+        map.visibleMapRect = zoomRect.union(pointRect)
     }
 }
 
@@ -44,11 +62,17 @@ extension DetailViewController: DetailViewContract {
         self.emailLabel.text = userDetail.email
         self.locationLabel.text = userDetail.location
         self.registeredDateLabel.text = userDetail.registeredDate
-        self.genderImageView.image = userDetail.gender == "female" ? UIImage(named: "femenine") : UIImage(named: "masculine")
+        self.genderImageView.image = userDetail.gender == Gender.female.rawValue ? UIImage(named: "femenine") : UIImage(named: "masculine")
         
         if let url = URL(string: userDetail.picture) {
             userImageView.af_setImage(withURL: url, imageTransition: .crossDissolve(0.2))
         }
+        
+        guard let longitude = Double(userDetail.longitude), let latitude = Double(userDetail.latitude) else {
+            return
+        }
+        
+        self.addAnotation(longitude: longitude, latitude: latitude)
     }
     
     func showError() {

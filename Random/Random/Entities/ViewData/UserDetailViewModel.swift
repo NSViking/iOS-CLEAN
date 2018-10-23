@@ -16,5 +16,7 @@ import Foundation
     var picture: String = ""
     var gender: String = ""
     var location: String = ""
+    var latitude: String = ""
+    var longitude: String = ""
     var registeredDate: String = ""
 }

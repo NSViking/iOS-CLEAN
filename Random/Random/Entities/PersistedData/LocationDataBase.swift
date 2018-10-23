@@ -13,4 +13,6 @@ class LocationDataBase: Object {
     @objc dynamic var street = ""
     @objc dynamic var city = ""
     @objc dynamic var state = ""
+    @objc dynamic var longitude = ""
+    @objc dynamic var latitude = ""
 }
