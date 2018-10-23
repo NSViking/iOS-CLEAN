@@ -12,8 +12,8 @@ import RealmSwift
 class UserDataBase: Object {
     @objc dynamic var idUser = ""
     @objc dynamic var title = ""
-    @objc dynamic var first = ""
-    @objc dynamic var last = ""
+    @objc dynamic var firstname = ""
+    @objc dynamic var lastname = ""
     @objc dynamic var email = ""
     @objc dynamic var phone = ""
     @objc dynamic var gender = ""
