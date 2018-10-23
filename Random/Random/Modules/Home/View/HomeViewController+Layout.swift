@@ -36,6 +36,7 @@ extension HomeViewController {
         collectionView.contentInset = UIEdgeInsets(top: 25, left: 25 * 0.5, bottom: 0, right: 25 * 0.5)
         collectionView.backgroundColor = UIColor.white
         collectionView.register(HomeCollectionViewCell.self, forCellWithReuseIdentifier: HomeCollectionViewCell.identifier())
+        collectionView.register(HomeCollectionFooterView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: HomeCollectionFooterView.identifier())
         DispatchQueue.main.async {
             self.collectionView.dataSource = self
             self.collectionView.delegate = self
