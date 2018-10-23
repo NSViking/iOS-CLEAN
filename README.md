@@ -1,12 +1,12 @@
 # Random 
 This is an open project to show a way to implement CLEAN architecture on our iOS apps. There's not only one way to implement it so this is my approach. For that reason, I was inspired on VIPER, MVP and MVVM architectures. The most important is to take the advantages of each architecture and create your own view. 
-In this project I decided to have a big dependency of RxSwift, it's an example of a common situation when you are the owner of the project and you need to decide which dependencies you have and which you want to avoid.
+In this project I decided to have a big dependency of [RxSwift](https://github.com/ReactiveX/RxSwift), it's an example of a common situation when you are the owner of the project and you need to decide which dependencies you have and which you want to avoid.
 But one thing for sure, working with tests is the most important, try to have tests for each layer and working with approach like TDD or ATTD. Because the tests give us a good perspective to build our architecture, meet the CLEAN principles and avoid lot of bugs in the future.
 
 
 ## Exercise
 
-This project use [Moya](https://rometools.github.io/rome/) (Rx Wrapper works with [Alamofire](https://rometools.github.io/rome/)) as a Network Service client to obtain a list of users from [http://randomuser.me](http://randomuser.me), persist this obtained data on local storage with [Realm](http://randomuser.me), avoiding repetitions data. And render this data on a Master-Detail app, with a list of users and a detail for each one. Also have the posibility to search users by name, lastname or email.
+This project use [Moya](https://github.com/Moya/Moya) (Rx Wrapper works with [Alamofire](https://github.com/Alamofire/Alamofire) as a Network Service client to obtain a list of users from [http://randomuser.me](http://randomuser.me), persist this obtained data on local storage with [Realm](http://realm.io/), avoiding repetitions data. And render this data on a Master-Detail app, with a list of users and a detail for each one. Also have the posibility to search users by name, lastname or email.
 
 
 ## Architecture
@@ -16,12 +16,12 @@ You can see a visual scheme to understand better how it works:
 
 ![alt text](https://res.cloudinary.com/aka7/image/upload/v1540195508/Victor/Architectures/architecture.png)
 
-* [View](https://rometools.github.io/rome/) - Customize UI
-* [Presenter](https://rometools.github.io/rome/) - Presentation Logic
-* [Router](https://rometools.github.io/rome/) - Navigation layer
-* [Interface](https://rometools.github.io/rome/) - Business logic
-* [Repository](https://rometools.github.io/rome/) - Bridge between data and business logic
-* [Client](https://rometools.github.io/rome/) - Data layer, we can have DataBases, Network connections, Frameworks store, Memory, etc.
+* [View]() - Customize UI
+* [Presenter]() - Presentation Logic
+* [Router]() - Navigation layer
+* [Interface]() - Business logic
+* [Repository]() - Bridge between data and business logic
+* [Client]() - Data layer, we can have DataBases, Network connections, Frameworks store, Memory, etc.
 
 
 ## Tests
