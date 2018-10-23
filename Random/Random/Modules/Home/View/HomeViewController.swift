@@ -82,3 +82,50 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
         return CGSize(width: width, height: 300.0)
     }
 }
+
+extension HomeViewController {
+    func collectionView(_ collectionView: UICollectionView, layout
+        collectionViewLayout: UICollectionViewLayout,
+                        referenceSizeForFooterInSection section: Int) -> CGSize {
+            return CGSize(width:(collectionView.frame.size.width), height: 100.0)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        
+        if kind == UICollectionView.elementKindSectionFooter {
+            guard let view = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: HomeCollectionFooterView.identifier(), for: indexPath) as? HomeCollectionFooterView else {
+                    return UICollectionReusableView()
+            }
+            return view
+        }
+        return UICollectionReusableView()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplaySupplementaryView view: UICollectionReusableView, forElementKind elementKind: String, at indexPath: IndexPath) {
+        if elementKind == UICollectionView.elementKindSectionFooter {
+            
+            if let loadingView = view.viewWithTag(kFooterViewTag) as? UIActivityIndicatorView {
+                loadingView.startAnimating()
+                self.presenter?.getMoreData()
+            }
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didEndDisplayingSupplementaryView view: UICollectionReusableView, forElementOfKind elementKind: String, at indexPath: IndexPath) {
+        if elementKind == UICollectionView.elementKindSectionFooter{
+            
+            if let loadingView = view.viewWithTag(kFooterViewTag) as? UIActivityIndicatorView{
+                loadingView.stopAnimating()
+                loadingView.removeFromSuperview()
+            }
+        }
+    }
+}
+
+extension HomeViewController: HomeCollectionViewCellDelegate {
+    func removeButtonDidPress(id: String) {
+        self.presenter?.removeUser(id: id)
+        self.presenter?.setupData()
+        self.reloadData()
+    }
+}
