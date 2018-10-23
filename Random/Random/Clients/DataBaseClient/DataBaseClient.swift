@@ -30,6 +30,14 @@ class DataBaseClient: DataBaseClientContract {
         
         return Single.just(user)
     }
+	
+	func getUsersContains(data: String) -> Single<[UserDataBase]> {
+		let realm = try! Realm()
+		
+		let predicate = NSPredicate(format: "(email CONTAINS %@ OR lastname CONTAINS %@ OR firstname CONTAINS %@) AND deleted == %d", data, data, data, 0)
+		let users = realm.objects(UserDataBase.self).filter(predicate)
+		return Single.just(Array(users))
+	}
     
     func saveUsers(users: [UserDataBase]) {
         let realm = try! Realm()
@@ -41,6 +49,7 @@ class DataBaseClient: DataBaseClientContract {
                 if realm.objects(UserDataBase.self).filter(predicate).first != nil {
                     return
                 }
+				print(userK.idUser)
                 realm.add(userK)
             }
         }

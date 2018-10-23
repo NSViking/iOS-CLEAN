@@ -28,7 +28,7 @@ class HomePresenter {
 }
 
 extension HomePresenter: HomePresenterContract {
-    
+	
     func setupData() {
         _ = self.interactor.getUsers()
             .subscribe(onSuccess: { usersDataSource in
@@ -42,7 +42,7 @@ extension HomePresenter: HomePresenterContract {
     func getMoreData() {
         _ = self.interactor.getMoreUsers()
             .subscribe(onSuccess: { usersDataSource in
-                self.dataSource.append(contentsOf: self.mapArrayToViewModel(users: usersDataSource))
+                self.dataSource = self.mapArrayToViewModel(users: usersDataSource)
                 self.view?.reloadData()
         }) { error in
             self.view?.showError()
@@ -69,6 +69,16 @@ extension HomePresenter: HomePresenterContract {
     func removeUser(id: String) {
         self.interactor.removeUser(id: id)
     }
+	
+	func filterUsers(nameToSearch: String) {
+		_ = self.interactor.filterUsers(nameToSearch: nameToSearch)
+			.subscribe(onSuccess: { usersDataSource in
+				self.dataSource = self.mapArrayToViewModel(users: usersDataSource)
+				self.view?.reloadData()
+			}) { error in
+				self.view?.showError()
+			}.disposed(by: disposeBag)
+	}
 }
 
 private extension HomePresenter {

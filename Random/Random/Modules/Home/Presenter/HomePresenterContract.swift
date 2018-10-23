@@ -19,4 +19,6 @@ protocol HomePresenterContract {
     func goToDetail(index: Int)
     
     func removeUser(id: String)
+	
+	func filterUsers(nameToSearch: String)
 }
