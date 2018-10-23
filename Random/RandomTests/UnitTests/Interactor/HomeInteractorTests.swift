@@ -102,4 +102,38 @@ class HomeInteractorTests: XCTestCase {
         let _ = mockRepo.verify(verificationMode: Once()).saveUsers(users: [])
         let _ = mockRepo.verify(verificationMode: Once()).getUsers()
     }
+	
+	func testFilterUsers() {
+		let mockRepo = UserRepositoryMock(testCase: self)
+		let pagination = Pagination()
+		
+		let mockResponse: [User] = []
+		let _ = mockRepo.when()
+			.call(withReturnValue: mockRepo.filterUsers(nameToSearch: ""))
+			.thenReturn(Single.just(mockResponse))
+		
+		let interactor = HomeInteractor(repo: mockRepo, pagination: pagination)
+		
+		do {
+			let results = try interactor.filterUsers(nameToSearch: "")
+				.toBlocking()
+				.single()
+			XCTAssertTrue(results.count == 0)
+		} catch {
+			XCTFail()
+		}
+		
+		let _ = mockRepo.verify(verificationMode: Once()).filterUsers(nameToSearch: "")
+	}
+	
+	func testRemoveUser() {
+		let mockRepo = UserRepositoryMock(testCase: self)
+		let pagination = Pagination()
+		
+		let interactor = HomeInteractor(repo: mockRepo, pagination: pagination)
+		
+		interactor.removeUser(id: "")
+		
+		let _ = mockRepo.verify(verificationMode: Once()).removeUser(id: "")
+	}
 }

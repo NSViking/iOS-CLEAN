@@ -27,6 +27,15 @@ class HomeInteractorMock: NSObject, Mock {
 }
 
 extension HomeInteractorMock: HomeInteractorContract {
+	func removeUser(id: String) {
+		callHandler.accept(nil, ofFunction: #function, atFile: #file, inLine: #line, withArgs: nil)
+	}
+	
+	func filterUsers(nameToSearch: String) -> Single<[User]> {
+		let user = User()
+		return callHandler.accept(Single.just([user]), ofFunction: #function, atFile: #file, inLine: #line, withArgs: nil) as! Single<[User]>
+	}
+	
     
     func getUsers() -> Single<[User]> {
         let user = User()
