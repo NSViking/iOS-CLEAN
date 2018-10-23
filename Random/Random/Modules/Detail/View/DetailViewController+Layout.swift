@@ -90,7 +90,7 @@ extension DetailViewController {
     func setupAutoLayout() {
         mainScrollView.snp.makeConstraints { maker in
             maker.width.equalToSuperview()
-            maker.top.equalTo(view.safeAreaLayoutGuide.snp.top)
+            maker.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(20)
             maker.bottom.equalToSuperview()
         }
         

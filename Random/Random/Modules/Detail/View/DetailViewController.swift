@@ -37,7 +37,11 @@ class DetailViewController: UIViewController {
     
     func addAnotation(longitude: Double, latitude: Double) {
         let annotation = MKPointAnnotation()
-        annotation.coordinate = CLLocationCoordinate2D(latitude: longitude, longitude: latitude)
+        var coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+        if !CLLocationCoordinate2DIsValid(coordinate) {
+            coordinate = CLLocationCoordinate2D(latitude: 41.383349, longitude: 2.139448)
+        }
+        annotation.coordinate = coordinate
         map.addAnnotation(annotation)
         map.centerCoordinate = annotation.coordinate
         
