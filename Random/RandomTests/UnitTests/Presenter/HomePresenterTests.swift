@@ -74,6 +74,43 @@ class HomePresenterTests: XCTestCase {
         let _ = mockInteractor.verify(verificationMode: Once()).getMoreUsers()
         let _ = mockView.verify(verificationMode: Once()).showError()
     }
+	
+	func testFilterData() {
+		
+		let presenter = HomePresenter(interactor: mockInteractor, view: mockView, router: mockRouter)
+		
+		presenter.filterUsers(nameToSearch: "")
+		
+		let _ = mockInteractor.verify(verificationMode: Once()).filterUsers(nameToSearch: "")
+		let _ = mockView.verify(verificationMode: Once()).reloadData()
+	}
+	
+	func testFilterDataWrong() {
+		
+		let _ = mockInteractor.when()
+			.call(withReturnValue: mockInteractor.filterUsers(nameToSearch: ""))
+			.thenReturn(Single.error(HomeInteractorError.generic))
+		
+		let presenter = HomePresenter(interactor: mockInteractor, view: mockView, router: mockRouter)
+		
+		presenter.filterUsers(nameToSearch: "")
+		
+		let _ = mockInteractor.verify(verificationMode: Once()).filterUsers(nameToSearch: "")
+		let _ = mockView.verify(verificationMode: Once()).showError()
+	}
+	
+	func testRemoveUser() {
+		
+		let _ = mockInteractor.when()
+			.call(withReturnValue: mockInteractor.filterUsers(nameToSearch: ""))
+			.thenReturn(Single.error(HomeInteractorError.generic))
+		
+		let presenter = HomePresenter(interactor: mockInteractor, view: mockView, router: mockRouter)
+		
+		presenter.removeUser(id: "")
+		
+		let _ = mockInteractor.verify(verificationMode: Once()).removeUser(id: "")
+	}
     
     func testGoToDetail() {
         

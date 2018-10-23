@@ -29,6 +29,15 @@ class DataBaseClientMock: NSObject, Mock {
 }
 
 extension DataBaseClientMock: DataBaseClientContract {
+	func removeUser(id: String) {
+		callHandler.accept(nil, ofFunction: #function, atFile: #file, inLine: #line, withArgs: nil)
+	}
+	
+	func getUsersContains(data: String) -> Single<[UserDataBase]> {
+		let userData = UserDataBase()
+		return callHandler.accept(Single.just([userData]), ofFunction: #function, atFile: #file, inLine: #line, withArgs: nil) as! Single<[UserDataBase]>
+	}
+	
     func getUsers() -> Single<[UserDataBase]> {
         let userData = UserDataBase()
         return callHandler.accept(Single.just([userData]), ofFunction: #function, atFile: #file, inLine: #line, withArgs: nil) as! Single<[UserDataBase]>

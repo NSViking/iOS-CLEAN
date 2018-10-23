@@ -28,6 +28,15 @@ class UserRepositoryMock: NSObject, Mock {
 }
 
 extension UserRepositoryMock: UserRepositoryContract {
+	func removeUser(id: String) {
+		callHandler.accept(nil, ofFunction: #function, atFile: #file, inLine: #line, withArgs: nil)
+	}
+	
+	func filterUsers(nameToSearch: String) -> Single<[User]> {
+		let user = User()
+		return callHandler.accept(Single.just([user]), ofFunction: #function, atFile: #file, inLine: #line, withArgs: nil) as! Single<[User]>
+	}
+	
     func saveUsers(users: [User]) {
         callHandler.accept(nil, ofFunction: #function, atFile: #file, inLine: #line, withArgs: nil)
     }
