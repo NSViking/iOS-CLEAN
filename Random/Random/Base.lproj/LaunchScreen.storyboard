@@ -16,7 +16,20 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.93725490196078431" green="0.93565088510513306" blue="0.95562607049942017" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RandomImage" translatesAutoresizingMaskIntoConstraints="NO" id="7Xj-9e-CXT">
+                                <rect key="frame" x="87.5" y="243.5" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="Rua-WR-5KP"/>
+                                    <constraint firstAttribute="height" constant="200" id="ezL-14-BNP"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="7Xj-9e-CXT" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="VFH-IK-Z3x"/>
+                            <constraint firstItem="7Xj-9e-CXT" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="jGY-3J-pfW"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
@@ -25,4 +38,7 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="RandomImage" width="1024" height="1024"/>
+    </resources>
 </document>
