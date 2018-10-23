@@ -18,7 +18,6 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         self.setupUI()
-        self.setupAutoLayout()
         self.setupData()
     }
     
@@ -35,6 +34,12 @@ extension HomeViewController: HomeViewContract {
     
     func reloadData() {
         self.collectionView.reloadData()
+    }
+}
+
+extension HomeViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        
     }
 }
 

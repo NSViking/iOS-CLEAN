@@ -17,6 +17,13 @@ extension HomeViewController {
         setupViewProperties()
         setupCollectionViewProperties()
         setupAutoLayout()
+        setupSearchBar()
+    }
+    
+    private func setupSearchBar() {
+        let search = UISearchController(searchResultsController: nil)
+        search.searchResultsUpdater = self
+        self.navigationItem.searchController = search
     }
     
     private func setupSubviews() {
@@ -50,8 +57,7 @@ extension HomeViewController {
         flowLayout.minimumInteritemSpacing = 0
     }
     
-    func setupAutoLayout() {
-        
+    private func setupAutoLayout() {
         self.collectionView.snp.makeConstraints { maker in
             maker.edges.equalToSuperview()
         }
