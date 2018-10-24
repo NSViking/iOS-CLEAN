@@ -20,6 +20,7 @@ extension DetailViewController {
         setupUserNameLabelProperties()
         setupEmailLabelProperties()
         setupLocationLabelProperties()
+        setupRegisteredDate()
         setupMapProperties()
         setupAutoLayout()
     }
@@ -51,6 +52,11 @@ extension DetailViewController {
         self.containerView.layer.cornerRadius = 30
         self.containerView.clipsToBounds = true
         self.containerView.backgroundColor = UIColor.lightGray()
+    }
+    
+    func setupRegisteredDate() {
+        registeredDateLabel.font = UIFont.boldSystemFont(ofSize: 18)
+        registeredDateLabel.textColor = UIColor.black
     }
     
     func setupUserImageViewProperties() {
@@ -85,6 +91,7 @@ extension DetailViewController {
     
     func setupMapProperties() {
         map.layer.cornerRadius = 15
+        map.mapType = .satelliteFlyover
     }
     
     func setupAutoLayout() {
