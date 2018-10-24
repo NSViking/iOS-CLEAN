@@ -43,16 +43,16 @@ class DetailViewController: UIViewController {
         }
         annotation.coordinate = coordinate
         map.addAnnotation(annotation)
-        map.centerCoordinate = annotation.coordinate
         
-        self.centerMapToPin(annotation: annotation)
+        self.centerMapToPin(coordinate: coordinate)
     }
     
-    func centerMapToPin(annotation: MKPointAnnotation) {
-        let zoomRect = MKMapRect.null
-        let annotationPoint: MKMapPoint = MKMapPoint(annotation.coordinate);
-        let pointRect = MKMapRect(origin: annotationPoint, size: MKMapSize(width: 1000.0, height: 1000.0))
-        map.visibleMapRect = zoomRect.union(pointRect)
+    func centerMapToPin(coordinate: CLLocationCoordinate2D) {
+        
+        let regionRadius: CLLocationDistance = 1000
+        let coordinateRegion = MKCoordinateRegion(center: coordinate,
+                                                  latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
+        map.setRegion(coordinateRegion, animated: true)
     }
 }
 
@@ -65,8 +65,9 @@ extension DetailViewController: DetailViewContract {
         self.usernameLabel.text = userDetail.username
         self.emailLabel.text = userDetail.email
         self.locationLabel.text = userDetail.location
-        self.registeredDateLabel.text = userDetail.registeredDate
         self.genderImageView.image = userDetail.gender == Gender.female.rawValue ? UIImage(named: "femenine") : UIImage(named: "masculine")
+        
+        self.registeredDateLabel.text = convertDateFormater(userDetail.registeredDate)
         
         if let url = URL(string: userDetail.picture) {
             userImageView.af_setImage(withURL: url, imageTransition: .crossDissolve(0.2))
@@ -80,6 +81,16 @@ extension DetailViewController: DetailViewContract {
     }
     
     func showError() {
+        
+    }
+    
+    func convertDateFormater(_ date: String) -> String
+    {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss'Z'"
+        let date = dateFormatter.date(from: date)
+        dateFormatter.dateFormat = "dd-MM-yyyy"
+        return  dateFormatter.string(from: date!)
         
     }
 }

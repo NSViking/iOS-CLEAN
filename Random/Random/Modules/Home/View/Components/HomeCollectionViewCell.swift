@@ -12,6 +12,7 @@ import UIKit
 
 protocol HomeCollectionViewCellDelegate: class {
     func removeButtonDidPress(id: String)
+    func phoneButtonAction(phone: String)
 }
 
 class HomeCollectionViewCell: UICollectionViewCell {
@@ -54,5 +55,12 @@ class HomeCollectionViewCell: UICollectionViewCell {
     
     @objc func removeButtonDidPress() {
         self.delegate?.removeButtonDidPress(id: self.id)
+    }
+    
+    @objc func phoneButtonDidPress() {
+        guard let phone = self.phoneButton.titleLabel?.text else {
+            return
+        }
+        self.delegate?.phoneButtonAction(phone: phone)
     }
 }

@@ -155,4 +155,28 @@ extension HomeViewController: HomeCollectionViewCellDelegate {
         self.presenter?.setupData()
         self.reloadData()
     }
+    
+    func phoneButtonAction(phone: String) {
+        self.presentAlertToCall(phone: phone)
+    }
+    
+    func presentAlertToCall(phone: String) {
+        let cancelButtonTitle = "Cancel"
+        let cancelAction = UIAlertAction(title: cancelButtonTitle, style: .cancel)
+        
+        let callButtonTitle = "Call"
+        let callAction = UIAlertAction(title: callButtonTitle, style: .default) { _ in
+            if let url = URL(string: "tel://\(phone)") {
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            }
+        }
+        
+        let callAlertController = UIAlertController(
+            title: nil,
+            message: "Do you want call to \(phone)",
+            preferredStyle: .alert)
+        callAlertController.addAction(cancelAction)
+        callAlertController.addAction(callAction)
+        self.present(callAlertController, animated: true)
+    }
 }

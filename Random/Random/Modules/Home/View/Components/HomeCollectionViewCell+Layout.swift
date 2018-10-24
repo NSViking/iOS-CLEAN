@@ -107,6 +107,7 @@ private extension HomeCollectionViewCell {
     
     func setupPhoneButtonProperties() {
         phoneButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
+        phoneButton.addTarget(self, action: #selector(phoneButtonDidPress), for: .touchUpInside)
     }
     
     func setupRemoveButtonProperties() {
